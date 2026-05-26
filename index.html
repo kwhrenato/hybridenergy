@@ -15,7 +15,7 @@
            ========================================================================== */
         :root {
             --primary-color: #00bcd4; /* Ciano/Turquesa vibrante da logo */
-            --primary-dark: #005F73;  /* Azul profundo para elements de contraste */
+            --primary-dark: #005F73;  /* Azul profundo para elementos de contraste */
             --dark-bg: #12161a;       /* Fundo escuro do cabeçalho e rodapé */
             --light-bg: #ffffff;      /* Fundo do corpo */
             --text-dark: #212529;     /* Texto do corpo principal */
@@ -75,7 +75,7 @@
         }
 
         .header-logo {
-            height: 90px; /* Ajustado de 52px para 90px para melhorar a leitura da marca */
+            height: 90px; /* Ajustado para melhorar a leitura da marca */
             width: auto;
             display: block;
         }
@@ -111,65 +111,6 @@
         }
 
         .nav-item a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Dropdown customizado de Navegação Interna */
-        .dropdown {
-            position: relative;
-            cursor: pointer;
-        }
-
-        .dropdown-btn {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            text-transform: uppercase;
-        }
-
-        .dropdown-btn svg {
-            fill: currentColor;
-            transition: transform 0.3s ease;
-        }
-
-        .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            right: 0;
-            background-color: var(--dark-bg);
-            border: 1px solid #2d3748;
-            border-radius: 6px;
-            list-style: none;
-            width: 220px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(10px);
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
-            padding: 10px 0;
-        }
-
-        .dropdown:hover .dropdown-menu,
-        .dropdown.open .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown:hover .dropdown-btn svg,
-        .dropdown.open .dropdown-btn svg {
-            transform: rotate(180deg);
-        }
-
-        .dropdown-menu li a {
-            display: block;
-            padding: 10px 20px;
-            font-size: 0.85rem;
-            color: var(--text-light);
-        }
-
-        .dropdown-menu li a:hover {
-            background-color: #1a202c;
             color: var(--primary-color);
         }
 
@@ -406,22 +347,6 @@
                 display: none;
             }
 
-            .dropdown-menu {
-                position: static;
-                width: 100%;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                box-shadow: none;
-                border: none;
-                background-color: #1a202c;
-                display: none;
-            }
-
-            .dropdown.open .dropdown-menu {
-                display: block;
-            }
-
             .footer-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -470,7 +395,7 @@
                 &#9776;
             </button>
 
-            <!-- Menu de Navegação -->
+            <!-- Menu de Navegação (Agora sem o dropdown para melhor usabilidade) -->
             <nav>
                 <ul class="nav-menu" id="nav-list">
                     <li class="nav-item active"><a href="/">Início</a></li>
@@ -478,19 +403,6 @@
                     <li class="nav-item"><a href="#eolica">Energia Eólica</a></li>
                     <li class="nav-item"><a href="#armazenamento">Armazenamento</a></li>
                     <li class="nav-item"><a href="#noticias">Notícias</a></li>
-                    <li class="nav-item dropdown" id="nav-dropdown">
-                        <span class="dropdown-btn">
-                            Navegação na Página
-                            <svg width="10" height="6" viewBox="0 0 10 6">
-                                <path d="M1 1 L5 5 L9 1" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
-                            </svg>
-                        </span>
-                        <ul class="dropdown-menu">
-                            <li><a href="#introducao">Introdução</a></li>
-                            <li><a href="#analise-tecnica">Análise Técnica</a></li>
-                            <li><a href="#custo-beneficio">Custo-Benefício</a></li>
-                        </ul>
-                    </li>
                 </ul>
             </nav>
 
@@ -592,25 +504,17 @@
         document.addEventListener('DOMContentLoaded', () => {
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const navList = document.getElementById('nav-list');
-            const navDropdown = document.getElementById('nav-dropdown');
 
             // Toggle para Menu de Celular
             mobileMenuBtn.addEventListener('click', () => {
                 navList.classList.toggle('open');
             });
 
-            // Toggle do Dropdown no toque para Mobile
-            navDropdown.addEventListener('click', (e) => {
-                if (window.innerWidth <= 868) {
-                    navDropdown.classList.toggle('open');
-                    e.stopPropagation();
-                }
-            });
-
             // Fecha menus ao clicar fora
-            document.addEventListener('click', () => {
-                navDropdown.classList.remove('open');
-                navList.classList.remove('open');
+            document.addEventListener('click', (e) => {
+                if (!mobileMenuBtn.contains(e.target) && !navList.contains(e.target)) {
+                    navList.classList.remove('open');
+                }
             });
         });
     </script>
