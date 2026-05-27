@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HybridEnergy - Independência Energética ao seu Alcance</title>
+    <!-- Importação de fonte moderna e leve direto do Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================================================
+           RESET & VARIÁVEIS GLOBAIS
+           ========================================================================== */
+        :root {
+            --primary-color: #00bcd4; /* Ciano/Turquesa vibrante da logo */
+            --primary-dark: #005F73;  /* Azul profundo para elements de contraste */
+            --dark-bg: #12161a;       /* Fundo escuro do cabeçalho e rodapé */
+            --light-bg: #ffffff;      /* Fundo do corpo */
+            --text-dark: #212529;     /* Texto do corpo principal */
+            --text-light: #ffffff;    /* Texto claro para áreas escuras */
+            --text-muted: #a0aec0;    /* Texto de apoio cinza */
+            --font-main: 'Inter', sans-serif;
+            --max-width: 1100px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--text-dark);
+            background-color: var(--light-bg);
+            line-height: 1.7;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        /* ==========================================================================
+           CABEÇALHO (HEADER)
+           ========================================================================== */
+        header {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            border-bottom: 2px solid #1a202c;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        /* Logo Estilizada por Imagem */
+        .logo-area {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-logo {
+            height: 90px; /* Ajustado para melhorar a leitura da marca */
+            width: auto;
+            display: block;
+        }
+
+        /* Navegação */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .nav-item {
+            font-size: 0.9rem;
+            font-weight: 600;
+            position: relative;
+            padding: 8px 0;
+        }
+
+        .nav-item.active a {
+            color: var(--primary-color);
+        }
+
+        /* Indicador ativo debaixo do item */
+        .nav-item.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background-color: var(--primary-color);
+        }
+
+        .nav-item a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Ícone de busca */
+        .search-icon {
+            color: var(--primary-color);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .search-icon:hover {
+            opacity: 0.8;
+        }
+
+        /* Botão do Menu Hambúrguer (Mobile) */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* ==========================================================================
+           CORPO DA PÁGINA (MAIN CONTENT)
+           ========================================================================== */
+        main {
+            flex-grow: 1;
+            max-width: 900px; /* Largura ideal de leitura técnica */
+            margin: 0 auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .article-header {
+            margin-bottom: 30px;
+        }
+
+        .article-title-large {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .article-text {
+            font-size: 1.15rem;
+            color: #2d3748;
+            margin-bottom: 40px;
+            text-align: justify; /* Alinhamento justificado para melhor fluidez */
+            text-justify: inter-word;
+        }
+
+        .article-section-title {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-top: 50px;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        /* ==========================================================================
+           RODAPÉ (FOOTER)
+           ========================================================================== */
+        footer {
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            padding-top: 60px;
+            margin-top: auto;
+        }
+
+        .footer-grid {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1.3fr;
+            gap: 40px;
+            padding: 0 20px 50px 20px;
+        }
+
+        /* Coluna 1: Logo e Slogan */
+        .footer-brand {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .footer-logo-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            align-self: center;        }
+
+        .footer-logo {
+            height: 90px; /* Destaque maior no rodapé */
+            width: auto;
+            display: block;
+        }
+
+        .footer-tagline {
+            font-size: 1.5rem; /* Aumentado para corresponder à imagem */
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 30px;
+            color: var(--text-light);
+            text-align: left;
+            max-width: 290px; /* Força a quebra perfeita: "Independência Energética ao" / "seu Alcance" */
+        }
+
+        /* Ícone do Pinterest customizado por imagem */
+        .social-pinterest-link {
+            display: inline-block;
+            width: 44px;
+            height: 44px;
+            transition: transform 0.3s ease;
+            align-self: center;        }
+
+        .social-pinterest-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 50%; /* Garante o formato circular perfeito */
+        }
+
+        /* Coluna 2: Conheça Mais Links */
+        .footer-nav {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .footer-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-links li {
+            font-size: 1.05rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 10px;
+            text-align: left;
+        }
+
+        .footer-links li:last-child {
+            border-bottom: none;
+        }
+
+        .footer-links a {
+            color: #cbd5e0;
+            display: block;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+
+        /* Coluna 3: Disclaimer de Afiliados */
+        .footer-disclaimer {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .disclaimer-text {
+            font-size: 0.95rem;
+            color: #cbd5e0;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        /* Faixa Azul de Direitos Autorais */
+        .bottom-bar {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 15px 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+
+        /* ==========================================================================
+           RESPONSIVIDADE (MOBILE-FIRST & BREAKPOINTS)
+           ========================================================================== */
+        @media (max-width: 868px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--dark-bg);
+                flex-direction: column;
+                gap: 0;
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+                border-bottom: 1px solid #2d3748;
+            }
+
+            .nav-menu.open {
+                max-height: 400px;
+                overflow-y: auto;
+            }
+
+            .nav-item {
+                width: 100%;
+                text-align: center;
+                padding: 15px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+
+            .nav-item.active::after {
+                display: none;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .footer-brand, .footer-logo-container {
+                align-items: center;
+                justify-content: center;
+            }
+
+            .footer-tagline {
+                text-align: center;
+            }
+
+            .footer-links li {
+                text-align: center;
+            }
+
+            .disclaimer-text {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==========================================================================
+         CABEÇALHO
+         ========================================================================== -->
+    <header>
+        <div class="header-container">
+            <!-- Logo Oficial Substituída pela imagem WebP dentro da pasta imagens -->
+            <a href="/" class="logo-area" aria-label="Página Inicial HybridEnergy">
+                <img 
+                    src="imagens/logo transparente retangular.webp" 
+                    alt="HybridEnergy" 
+                    class="header-logo"
+                    width="405"
+                    height="90"
+                >
+            </a>
+
+            <!-- Botão Hambúrguer para Telas Pequenas -->
+            <button class="menu-toggle" id="mobile-menu-btn" aria-label="Abrir Menu">
+                &#9776;
+            </button>
+
+            <!-- Menu de Navegação (Agora sem o dropdown para melhor usabilidade) -->
+            <nav>
+                <ul class="nav-menu" id="nav-list">
+                    <li class="nav-item active"><a href="/">Início</a></li>
+                    <li class="nav-item"><a href="#solar">Energia Solar</a></li>
+                    <li class="nav-item"><a href="#eolica">Energia Eólica</a></li>
+                    <li class="nav-item"><a href="#armazenamento">Armazenamento</a></li>
+                    <li class="nav-item"><a href="#noticias">Notícias</a></li>
+                </ul>
+            </nav>
+
+            <!-- Lupa de Busca Estética -->
+            <div class="search-icon" aria-label="Buscar no Site">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         CONTEÚDO PRINCIPAL
+         ========================================================================== -->
+    <main>
+        <!-- Título Superior -->
+        <div class="article-header">
+            <h1 class="article-title-large">
+                Passagem padrão original de Lorem Ipsum, usada desde o século XVI.
+            </h1>
+        </div>
+
+        <!-- Parágrafo 1 -->
+        <p class="article-text" id="introducao">
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </p>
+
+        <!-- Subtítulo de Seção -->
+        <h2 class="article-section-title" id="analise-tecnica">
+            Seção 1.10.32 de "de Finibus Bonorum et Malorum", escrita por Cícero em 45 AC
+        </h2>
+
+        <!-- Parágrafo 2 -->
+        <p class="article-text" id="custo-beneficio">
+            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+        </p>
+    </main>
+
+    <!-- ==========================================================================
+         RODAPÉ
+         ========================================================================== -->
+    <footer>
+        <div class="footer-grid">
+            <!-- Coluna 1: Branding -->
+            <div class="footer-brand">
+                <div class="footer-logo-container">
+                    <img 
+                        src="imagens/logo transparente 1000px.webp" 
+                        alt="HybridEnergy Logo Rodapé" 
+                        class="footer-logo"
+                        width="180"
+                        height="90"
+                    >
+                </div>
+                <h3 class="footer-tagline">Independência Energética ao seu Alcance</h3>
+                <!-- Ícone Oficial do Pinterest Substituído pela imagem WebP dentro da pasta imagens -->
+                <a href="#" class="social-pinterest-link" aria-label="Visite nosso Pinterest">
+                    <img 
+                        src="imagens/Pinterest ícone 512×512.webp" 
+                        alt="Ícone do Pinterest" 
+                        class="social-pinterest-img"
+                        width="44"
+                        height="44"
+                    >
+                </a>
+            </div>
+
+            <!-- Coluna 2: Navegação -->
+            <div class="footer-nav">
+                <h4 class="footer-title">Conheça Mais</h4>
+                <ul class="footer-links">
+                    <li><a href="/politica-de-privacidade">Política de Privacidade</a></li>
+                    <li><a href="/termos-de-uso">Termos de Uso</a></li>
+                    <li><a href="/sobre">Sobre a Hybridenergy</a></li>
+                    <li><a href="/contato">Contato</a></li>
+                </ul>
+            </div>
+
+            <!-- Coluna 3: Disclaimer de Afiliados -->
+            <div class="footer-disclaimer">
+                <p class="disclaimer-text">
+                    O hybridenergy.com.br utiliza links de afiliados e exibe conteúdos de terceiros (citados em legenda) para fins de análise técnica. Ao comprar pelos nossos links, você apoia nosso trabalho sem custo adicional.
+                </p>
+            </div>
+        </div>
+
+        <!-- Faixa inferior com copyright e descrição de nicho (Data ajustada para 2014-2026) -->
+        <div class="bottom-bar">
+            © 2014-2026 HybridEnergy.com.br. Todos os direitos reservados. | Um site de review sobre energia híbrida.
+        </div>
+    </footer>
+
+    <!-- ==========================================================================
+         SCRIPT DE COMPORTAMENTO INTERATIVO
+         ========================================================================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const navList = document.getElementById('nav-list');
+
+            // Toggle para Menu de Celular
+            mobileMenuBtn.addEventListener('click', () => {
+                navList.classList.toggle('open');
+            });
+
+            // Fecha menus ao clicar fora
+            document.addEventListener('click', (e) => {
+                if (!mobileMenuBtn.contains(e.target) && !navList.contains(e.target)) {
+                    navList.classList.remove('open');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

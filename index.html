@@ -1,517 +1,303 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HybridEnergy - Independência Energética ao seu Alcance</title>
-    <!-- Importação de fonte moderna e leve direto do Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     
-    <style>
-        /* ==========================================================================
-           RESET & VARIÁVEIS GLOBAIS
-           ========================================================================== */
-        :root {
-            --primary-color: #00bcd4; /* Ciano/Turquesa vibrante da logo */
-            --primary-dark: #005F73;  /* Azul profundo para elements de contraste */
-            --dark-bg: #12161a;       /* Fundo escuro do cabeçalho e rodapé */
-            --light-bg: #ffffff;      /* Fundo do corpo */
-            --text-dark: #212529;     /* Texto do corpo principal */
-            --text-light: #ffffff;    /* Texto claro para áreas escuras */
-            --text-muted: #a0aec0;    /* Texto de apoio cinza */
-            --font-main: 'Inter', sans-serif;
-            --max-width: 1100px;
-        }
+    <!-- SEO On-Page -->
+    <title>Fontes de energia renovável para sistemas híbridos residenciais</title>
+    <meta name="description" content="Entenda como integrar fontes de energia renovável para sistemas híbridos. Guia completo sobre geração fotovoltaica, eólica e bancos de baterias estacionárias.">
+    <link rel="canonical" href="https://hybridenergy.com.br/">
+    
+    <!-- Open Graph (SEO Social) -->
+    <meta property="og:title" content="Fontes de energia renovável para sistemas híbridos residenciais">
+    <meta property="og:description" content="Entenda como integrar fontes de energia renovável para sistemas híbridos. Guia completo sobre geração fotovoltaica, eólica e bancos de baterias estacionárias.">
+    <meta property="og:image" content="https://hybridenergy.com.br/img/banner-desktop.webp">
+    <meta property="og:url" content="https://hybridenergy.com.br/">
+    <meta property="og:type" content="website">
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: var(--font-main);
-            color: var(--text-dark);
-            background-color: var(--light-bg);
-            line-height: 1.7;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-
-        a {
-            color: inherit;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        /* ==========================================================================
-           CABEÇALHO (HEADER)
-           ========================================================================== */
-        header {
-            background-color: var(--dark-bg);
-            color: var(--text-light);
-            border-bottom: 2px solid #1a202c;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 20px;
-        }
-
-        /* Logo Estilizada por Imagem */
-        .logo-area {
-            display: flex;
-            align-items: center;
-        }
-
-        .header-logo {
-            height: 90px; /* Ajustado para melhorar a leitura da marca */
-            width: auto;
-            display: block;
-        }
-
-        /* Navegação */
-        .nav-menu {
-            display: flex;
-            align-items: center;
-            gap: 25px;
-            list-style: none;
-        }
-
-        .nav-item {
-            font-size: 0.9rem;
-            font-weight: 600;
-            position: relative;
-            padding: 8px 0;
-        }
-
-        .nav-item.active a {
-            color: var(--primary-color);
-        }
-
-        /* Indicador ativo debaixo do item */
-        .nav-item.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 30px;
-            height: 2px;
-            background-color: var(--primary-color);
-        }
-
-        .nav-item a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Ícone de busca */
-        .search-icon {
-            color: var(--primary-color);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-        }
-
-        .search-icon:hover {
-            opacity: 0.8;
-        }
-
-        /* Botão do Menu Hambúrguer (Mobile) */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text-light);
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* ==========================================================================
-           CORPO DA PÁGINA (MAIN CONTENT)
-           ========================================================================== */
-        main {
-            flex-grow: 1;
-            max-width: 900px; /* Largura ideal de leitura técnica */
-            margin: 0 auto;
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .article-header {
-            margin-bottom: 30px;
-        }
-
-        .article-title-large {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-bottom: 15px;
-            line-height: 1.4;
-        }
-
-        .article-text {
-            font-size: 1.15rem;
-            color: #2d3748;
-            margin-bottom: 40px;
-            text-align: justify; /* Alinhamento justificado para melhor fluidez */
-            text-justify: inter-word;
-        }
-
-        .article-section-title {
-            font-size: 1.35rem;
-            font-weight: 700;
-            color: var(--text-dark);
-            margin-top: 50px;
-            margin-bottom: 20px;
-            line-height: 1.4;
-        }
-
-        /* ==========================================================================
-           RODAPÉ (FOOTER)
-           ========================================================================== */
-        footer {
-            background-color: var(--dark-bg);
-            color: var(--text-light);
-            padding-top: 60px;
-            margin-top: auto;
-        }
-
-        .footer-grid {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr 1.3fr;
-            gap: 40px;
-            padding: 0 20px 50px 20px;
-        }
-
-        /* Coluna 1: Logo e Slogan */
-        .footer-brand {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .footer-logo-container {
-            display: flex;
-            align-items: center;
-            margin-bottom: 25px;
-            align-self: center;        }
-
-        .footer-logo {
-            height: 90px; /* Destaque maior no rodapé */
-            width: auto;
-            display: block;
-        }
-
-        .footer-tagline {
-            font-size: 1.5rem; /* Aumentado para corresponder à imagem */
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 30px;
-            color: var(--text-light);
-            text-align: left;
-            max-width: 290px; /* Força a quebra perfeita: "Independência Energética ao" / "seu Alcance" */
-        }
-
-        /* Ícone do Pinterest customizado por imagem */
-        .social-pinterest-link {
-            display: inline-block;
-            width: 44px;
-            height: 44px;
-            transition: transform 0.3s ease;
-            align-self: center;        }
-
-        .social-pinterest-img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 50%; /* Garante o formato circular perfeito */
-        }
-
-        /* Coluna 2: Conheça Mais Links */
-        .footer-nav {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .footer-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 25px;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .footer-links {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .footer-links li {
-            font-size: 1.05rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding-bottom: 10px;
-            text-align: left;
-        }
-
-        .footer-links li:last-child {
-            border-bottom: none;
-        }
-
-        .footer-links a {
-            color: #cbd5e0;
-            display: block;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-color);
-            padding-left: 5px;
-        }
-
-        /* Coluna 3: Disclaimer de Afiliados */
-        .footer-disclaimer {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .disclaimer-text {
-            font-size: 0.95rem;
-            color: #cbd5e0;
-            line-height: 1.6;
-            text-align: left;
-        }
-
-        /* Faixa Azul de Direitos Autorais */
-        .bottom-bar {
-            background-color: var(--primary-dark);
-            color: var(--text-light);
-            text-align: center;
-            padding: 15px 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-        }
-
-        /* ==========================================================================
-           RESPONSIVIDADE (MOBILE-FIRST & BREAKPOINTS)
-           ========================================================================== */
-        @media (max-width: 868px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-menu {
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--dark-bg);
-                flex-direction: column;
-                gap: 0;
-                padding: 0;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease-out;
-                border-bottom: 1px solid #2d3748;
-            }
-
-            .nav-menu.open {
-                max-height: 400px;
-                overflow-y: auto;
-            }
-
-            .nav-item {
-                width: 100%;
-                text-align: center;
-                padding: 15px 0;
-                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            }
-
-            .nav-item.active::after {
-                display: none;
-            }
-
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 40px;
-                text-align: center;
-            }
-
-            .footer-brand, .footer-logo-container {
-                align-items: center;
-                justify-content: center;
-            }
-
-            .footer-tagline {
-                text-align: center;
-            }
-
-            .footer-links li {
-                text-align: center;
-            }
-
-            .disclaimer-text {
-                text-align: center;
+    <!-- Tailwind CSS CDN (Estilização Moderna e Otimizada) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandDark: '#0f172a',
+                        brandPrimary: '#0284c7',
+                        brandAccent: '#10b981'
+                    }
+                }
             }
         }
-    </style>
+    </script>
+
+    <!-- Schema Markup JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Fontes de energia renovável para sistemas híbridos residenciais",
+      "description": "Guia técnico aprofundado abordando a integração de geração distribuída solar, eólica e armazenamento de energia via baterias estacionárias para uso residencial e pequenas empresas.",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Hybrid Energy",
+        "url": "https://hybridenergy.com.br"
+      },
+      "mainEntity": {
+        "@type": "Article",
+        "headline": "Fontes de energia renovável para sistemas híbridos",
+        "description": "Uma análise detalhada sobre a engenharia por trás da transição energética distribuída e a composição de microrredes autônomas.",
+        "author": {
+          "@type": "Person",
+          "name": "Renato Oliveira"
+        }
+      }
+    }
+    </script>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-800 antialiased font-sans leading-relaxed">
 
-    <!-- ==========================================================================
-         CABEÇALHO
-         ========================================================================== -->
-    <header>
-        <div class="header-container">
-            <!-- Logo Oficial Substituída pela imagem WebP dentro da pasta imagens -->
-            <a href="/" class="logo-area" aria-label="Página Inicial HybridEnergy">
-                <img 
-                    src="imagens/logo transparente retangular.webp" 
-                    alt="HybridEnergy" 
-                    class="header-logo"
-                    width="405"
-                    height="90"
-                >
-            </a>
-
-            <!-- Botão Hambúrguer para Telas Pequenas -->
-            <button class="menu-toggle" id="mobile-menu-btn" aria-label="Abrir Menu">
-                &#9776;
-            </button>
-
-            <!-- Menu de Navegação (Agora sem o dropdown para melhor usabilidade) -->
-            <nav>
-                <ul class="nav-menu" id="nav-list">
-                    <li class="nav-item active"><a href="/">Início</a></li>
-                    <li class="nav-item"><a href="#solar">Energia Solar</a></li>
-                    <li class="nav-item"><a href="#eolica">Energia Eólica</a></li>
-                    <li class="nav-item"><a href="#armazenamento">Armazenamento</a></li>
-                    <li class="nav-item"><a href="#noticias">Notícias</a></li>
-                </ul>
-            </nav>
-
-            <!-- Lupa de Busca Estética -->
-            <div class="search-icon" aria-label="Buscar no Site">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                </svg>
+    <!-- Header / Navbar Minimalista -->
+    <header class="bg-brandDark text-white sticky top-0 z-50 shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex flex-col sm:flex-row items-center justify-between">
+            <div class="text-2xl font-bold tracking-tight text-white">
+                HYBRID<span class="text-brandPrimary">ENERGY</span><span class="text-xs text-slate-400">.com.br</span>
             </div>
+            <nav class="mt-4 sm:mt-0 flex space-x-6 text-sm font-medium">
+                <a href="#introducao" class="hover:text-brandPrimary transition">Conceitos</a>
+                <a href="/solar/" class="hover:text-brandPrimary transition">Solar</a>
+                <a href="/eolica/" class="hover:text-brandPrimary transition">Eólica</a>
+                <a href="/armazenamento/" class="hover:text-brandPrimary transition">Armazenamento</a>
+            </nav>
         </div>
     </header>
 
-    <!-- ==========================================================================
-         CONTEÚDO PRINCIPAL
-         ========================================================================== -->
-    <main>
-        <!-- Título Superior -->
-        <div class="article-header">
-            <h1 class="article-title-large">
-                Passagem padrão original de Lorem Ipsum, usada desde o século XVI.
-            </h1>
-        </div>
+    <!-- Hero Section Responsivo com Picture Tag -->
+    <section class="relative bg-brandDark text-white overflow-hidden">
+        <picture class="w-full h-auto block">
+            <source media="(min-width: 769px)" srcset="img/banner-desktop.webp">
+            <img src="img/banner-mobile.webp" alt="Infográfico conceitual exibindo fontes de energia renovável para sistemas híbridos incorporando painéis fotovoltaicos e aerogeradores" class="w-full h-auto object-cover opacity-80" loading="eager">
+        </picture>
+    </section>
 
-        <!-- Parágrafo 1 -->
-        <p class="article-text" id="introducao">
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        </p>
+    <!-- Conteúdo Principal -->
+    <main class="max-w-5xl mx-auto px-4 py-12 bg-white my-8 shadow-sm rounded-lg">
+        
+        <!-- H1 Principal do Silo -->
+        <h1 id="introducao" class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight mb-8 border-b-2 border-slate-100 pb-4">
+            Fontes de energia renovável para sistemas híbridos: O Guia Definitivo de Engenharia para Autonomia Residencial e Comercial
+        </h1>
 
-        <!-- Subtítulo de Seção -->
-        <h2 class="article-section-title" id="analise-tecnica">
-            Seção 1.10.32 de "de Finibus Bonorum et Malorum", escrita por Cícero em 45 AC
-        </h2>
+        <!-- Introdução Baseada na EPE -->
+        <section class="space-y-6 text-lg text-slate-700">
+            <p>
+                A infraestrutura de fornecimento elétrico global enfrenta um período de profunda reestruturação técnica e conceitual. Conforme mapeado detalhadamente pelas diretrizes educacionais e de planejamento técnico do portal oficial da <strong>Empresa de Pesquisa Energética (EPE)</strong>, a classificação vetorial das forças energéticas globais se divide primariamente entre fontes não renováveis e fontes renováveis de energia. 
+            </p>
+            <p>
+                As fontes não renováveis englobam os recursos combustíveis de origem fóssil (petróleo, carvão mineral e gás natural) e o urânio empregado nas usinas termonucleares. Embora esses insumos tenham sido os grandes motores da industrialização global, suas limitações são intrínsecas: a finitude geológica de suas reservas e os altos índices de emissão de Gases de Efeito Estufa (GEE) durante os processos de conversão térmica. 
+            </p>
+            <p>
+                Em contrapartida, as <strong>fontes de energia renovável para sistemas híbridos</strong> se destacam por sua dinâmica cíclica de regeneração natural. Elas utilizam fluxos energéticos contínuos e virtualmente inesgotáveis derivados do ecossistema terrestre, tais como a radiação solar direta, o deslocamento de massas de ar atmosférico, o fluxo cinético de corpos hídricos e as reações químicas controladas da biomassa. Na engenharia de microrredes modernas, a transição para energia limpa deixa de ser apenas uma escolha ambiental e passa a se consolidar como uma decisão de viabilidade técnica e financeira de longo prazo.
+            </p>
+            <p>
+                Contudo, no âmbito do atendimento a unidades consumidoras residenciais e comerciais de pequeno porte, a implantação isolada dessas fontes encontra barreiras de intermitência severas. É a partir desse gargalo que se estabelece a engenharia de sistemas híbridos: a união inteligente de dois ou mais vetores de geração locais atuando em sinergia com módulos de armazenamento de energia descentralizados.
+            </p>
+        </section>
 
-        <!-- Parágrafo 2 -->
-        <p class="article-text" id="custo-beneficio">
-            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
-        </p>
+        <!-- Seção de Geração Intermitente (Solar e Eólica) -->
+        <section class="mt-12 space-y-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">
+                Geração Intermitente: O Papel da Geração de Energia Fotovoltaica Residencial e Eólica de Pequena Escala
+            </h2>
+            
+            <p class="text-slate-700 text-lg">
+                Para compreender <strong>como funciona um sistema de energia híbrida residencial</strong>, o projetista deve destrinchar os perfis de carga e os recursos de disponibilidade ambiental locais. A integração clássica une a geração solar fotovoltaica ao aproveitamento cinético dos ventos, duas fontes cujas curvas de produtividade diária e sazonal costumam apresentar um comportamento de complementaridade meteorológica natural em diversas regiões do território brasileiro.
+            </p>
+
+            <h3 class="text-xl font-bold text-slate-800 mt-6">Engenharia da Geração de Energia Fotovoltaica Residencial</h3>
+            <p class="text-slate-700">
+                A conversão da energia luminosa em eletricidade ocorre em nível atômico nas células fotovoltaicas através do efeito fotoelétrico. Quando os fótons da radiação solar incidem sobre o material semicondutor (predominantemente o silício dopado), eles transferem energia aos elétrons das bandas de valência, gerando uma corrente contínua (CC).
+            </p>
+            <p class="text-slate-700">
+                A eficiência dessa operação está atrelada à pureza estrutural das células. Atualmente, os módulos de tecnologia monocristalina apresentam taxas de conversão comerciais superiores a 21%, superando as antigas alternativas policristalinas devido ao alinhamento molecular mais homogêneo do cristal de silício. Todavia, a geração fotovoltaica apresenta uma limitação geométrica óbvia: sua dependência absoluta da irradiância solar local. A curva de produção assemelha-se a uma distribuição gaussiana truncada, concentrando seu pico nas proximidades do meio-dia solar e caindo a zero durante o período noturno ou sob severas atenuações provocadas por nebulosidade densa.
+            </p>
+
+            <!-- CTA Interno para Categoria Solar -->
+            <div class="bg-slate-50 border-l-4 border-brandPrimary p-6 my-6 rounded-r-lg">
+                <p class="font-semibold text-slate-900 mb-2">Precisa de dados detalhados sobre inversores e painéis solares?</p>
+                <p class="text-sm text-slate-600 mb-4">Analisamos o comportamento térmico, coeficientes de temperatura e eficiência de conversão das principais marcas do mercado nacional.</p>
+                <a href="/solar/" class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-white bg-brandPrimary px-4 py-2 rounded shadow hover:bg-sky-700 transition" aria-label="Acessar guias e análises técnicas sobre energia solar">Acessar Guia Técnico de Energia Solar</a>
+            </div>
+
+            <h3 class="text-xl font-bold text-slate-800 mt-8">Energia Eólica de Pequena Escala (Microeólica)</h3>
+            <p class="text-slate-700">
+                A microeólica residencial baseia-se na extração da energia cinética contida nas correntes de vento, transformando-a em torque mecânico rotacional por meio de pás aerodinâmicas acopladas a um gerador de ímãs permanentes. A potência útil disponível no vento é proporcional ao cubo de sua velocidade ($P \propto v^3$), o que significa que pequenas variações na velocidade do vento geram variações massivas na energia elétrica final gerada.
+            </p>
+            <p class="text-slate-700">
+                Os modelos residenciais dividem-se entre eixos horizontais (HAWT), que demandam sistemas de direcionamento e ventos mais lineares, e eixos verticais (VAWT), mais tolerantes a fluxos turbulentos comuns em perímetros urbanos. A grande vantagem técnica da microeólica em sistemas híbridos é sua capacidade de complementar a curva solar: em muitas regiões, os ventos intensificam-se justamente nos períodos de transição térmica entre o entardecer e a noite, preenchendo parte do vale de geração fotovoltaica. No entanto, o vento permanece como um vetor estocástico (imprevisível no curto prazo), exigindo uma topologia estável para mitigar flutuações severas de tensão e frequência na microrrede.
+            </p>
+
+            <!-- CTA Interno para Categoria Eólica -->
+            <div class="bg-slate-50 border-l-4 border-brandAccent p-6 my-6 rounded-r-lg">
+                <p class="font-semibold text-slate-900 mb-2">Está projetando uma microrrede eólica residencial?</p>
+                <p class="text-sm text-slate-600 mb-4">Veja as curvas de potência reais e as velocidades de partida (cut-in) dos aerogeradores comerciais adequados para o cenário brasileiro.</p>
+                <a href="/eolica/" class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-white bg-brandAccent px-4 py-2 rounded shadow hover:bg-emerald-600 transition" aria-label="Acessar guias e análises sobre energia eólica">Acessar Guia de Energia Microeólica</a>
+            </div>
+        </section>
+
+        <!-- Seção do Elo de Ligação (Baterias Estacionárias) -->
+        <section id="armazenamento" class="mt-12 space-y-8">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight">
+                O Elo de Ligação: Por que Sistemas Híbridos Exigem um Banco de Baterias Estacionárias
+            </h2>
+            <p class="text-slate-700 text-lg">
+                A mera soma de painéis solares e mini-aerogeradores não converte um imóvel em uma infraestrutura autônoma resiliente. Devido à natureza inerentemente intermitente dos vetores de geração limpa discutidos pela EPE, a estabilização ativa da tensão e o balanceamento instantâneo entre carga e geração exigem a incorporação de um <strong>banco de baterias estacionárias</strong>.
+            </p>
+            <p class="text-slate-700">
+                Diferente das baterias automotivas, projetadas para fornecer correntes extremamente elevadas por frações de segundo para a partida de motores de combustão, os dispositivos estacionários são dimensionados para regimes de descarga profundos e contínuos ao longo de extensos períodos. Eles atuam como amortecedores térmicos e elétricos do sistema híbrido, armazenando o excedente energético nos momentos de pico produtivo para suprir a demanda nos intervalos de escassez climática ou picos de carga do imóvel (técnica conhecida como <em>load shifting</em> ou atenuação de picos).
+            </p>
+            <p class="text-slate-700">
+                A correta integração de um sistema de <strong>armazenamento de energia solar residencial</strong> assegura que o inversor híbrido gerencie dinamicamente os fluxos elétricos sem causar quedas por subtensão na rede interna. Esse gerenciamento inteligente reduz drasticamente a dependência da concessionária local e resguarda os equipamentos sensíveis contra surtos e oscilações severas de frequência.
+            </p>
+
+            <h3 class="text-xl font-bold text-slate-800 mt-8">Análise Comparativa Avançada: Baterias LiFePO4 vs Chumbo-Ácido</h3>
+            <p class="text-slate-700">
+                No dimensionamento prático de bancos de baterias para microrredes, a escolha da química das células dita o custo total de propriedade (TCO) do projeto ao longo dos anos. A disputa tecnológica concentra-se entre as clássicas baterias de chumbo-ácido (ventiladas ou reguladas por válvula - VRLA) e as modernas soluções baseadas em fosfato de ferro-lítio (<strong>baterias LiFePO4 vs chumbo-ácido</strong>).
+            </p>
+
+            <!-- Tabela Técnica Comparativa -->
+            <div class="overflow-x-auto my-8">
+                <table class="w-full text-left text-sm border-collapse shadow-sm rounded-lg overflow-hidden border border-slate-200">
+                    <thead class="bg-brandDark text-white font-medium">
+                        <tr>
+                            <th class="p-4">Parâmetro de Engenharia</th>
+                            <th class="p-4">Tecnologia Chumbo-Ácido (VRLA/AGM)</th>
+                            <th class="p-4">Tecnologia Lítio (LiFePO4)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 bg-white text-slate-700">
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-4 font-semibold">Profundidade de Descarga Máxima (DoD)</td>
+                            <td class="p-4">50% recomendada (para preservar vida útil)</td>
+                            <td class="p-4 font-medium text-emerald-600">80% a 90% sem degradação acelerada</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-4 font-semibold">Vida Útil Líquida (Ciclos a 50% DoD)</td>
+                            <td class="p-4">400 a 800 ciclos</td>
+                            <td class="p-4 font-medium text-emerald-600">3000 a 6000+ ciclos</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-4 font-semibold">Eficiência Faradaica (Carga/Descarga)</td>
+                            <td class="p-4">~75% a 85% (perdas térmicas consideráveis)</td>
+                            <td class="p-4 font-medium text-emerald-600">>95% (mínima dissipação de calor)</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-4 font-semibold">Densidade Energética Gravimétrica</td>
+                            <td class="p-4">Baixa (~30-50 Wh/kg) - Exige amplo espaço físico</td>
+                            <td class="p-4 font-medium text-emerald-600">Alta (~100-140 Wh/kg) - Compacta e leve</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50">
+                            <td class="p-4 font-semibold">Necessidade de Monitoramento (BMS)</td>
+                            <td class="p-4">Inexistente (risco de sobrecarga sem aviso)</td>
+                            <td class="p-4">Obrigatória (BMS ativa integrada por célula)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p class="text-slate-700">
+                A análise fria dos dados revela uma assimetria econômica clara. Embora as baterias de chumbo-ácido apresentem um custo de aquisição inicial substancialmente menor, sua restrição de profundidade de descarga obriga o projetista a superdimensionar o banco de armazenamento (comprando o dobro da capacidade nominal necessária em Ah). Somado a isso, a baixa durabilidade em ciclos exige substituições periódicas a cada 2 ou 3 anos em regimes cíclicos severos. 
+            </p>
+            <p class="text-slate-700">
+                Em contrapartida, as células de LiFePO4 operam sob extrema estabilidade térmica, não sofrem com o efeito memória de sulfatação e mantêm uma eficiência de conversão energética próxima à unidade elétrica. Na ponta do lápis, o custo por ciclo do lítio ao longo de 10 anos de operação contínua chega a ser até três vezes menor do que o equivalente em chumbo-ácido, consolidando-se como o padrão ouro para sistemas híbridos de alta performance.
+            </p>
+
+            <!-- CTA Interno para Categoria Armazenamento -->
+            <div class="bg-slate-50 border-l-4 border-slate-700 p-6 my-6 rounded-r-lg">
+                <p class="font-semibold text-slate-900 mb-2">Está em dúvida sobre qual bateria comprar para o seu projeto?</p>
+                <p class="text-sm text-slate-600 mb-4">Desenvolvemos testes de bancada práticos avaliando a capacidade real em ampères-hora e as curvas de descarga sob diferentes temperaturas das principais células de lítio do mercado.</p>
+                <a href="/armazenamento/" class="inline-flex items-center text-xs font-bold uppercase tracking-wider text-white bg-slate-700 px-4 py-2 rounded shadow hover:bg-slate-800 transition" aria-label="Acessar análises detalhadas de baterias">Acessar Guia de Avaliação de Baterias</a>
+            </div>
+        </section>
+
+        <!-- Seção de FAQ (Acordeão Dinâmico com Vanilla JS) -->
+        <section class="mt-12 border-t border-slate-200 pt-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 tracking-tight mb-6">Perguntas Frequentes Sobre Sistemas de Energia Híbrida</h2>
+            
+            <div class="space-y-4">
+                <div class="border border-slate-200 rounded-lg overflow-hidden">
+                    <button class="w-full text-left p-4 bg-slate-50 hover:bg-slate-100 font-semibold text-slate-800 flex justify-between items-center transition faq-toggle" aria-expanded="false" aria-label="Expandir resposta sobre a diferença entre sistemas on-grid convencionais e sistemas híbridos">
+                        <span>Qual a diferença entre um sistema solar on-grid convencional e um sistema híbrido?</span>
+                        <span class="text-xl font-bold line-height-none text-slate-400">+</span>
+                    </button>
+                    <div class="p-4 text-slate-600 hidden border-t border-slate-200 bg-white">
+                        Os sistemas on-grid tradicionais desligam-se automaticamente por segurança caso ocorra queda de energia na concessionária (proteção contra ilhamento). Já os sistemas híbridos possuem inversores inteligentes capazes de isolar a residência da rede externa instantaneamente e continuar operando em modo isolado (off-grid), utilizando a energia captada na hora ou o banco de baterias estacionárias para alimentar as cargas prioritárias do imóvel.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-lg overflow-hidden">
+                    <button class="w-full text-left p-4 bg-slate-50 hover:bg-slate-100 font-semibold text-slate-800 flex justify-between items-center transition faq-toggle" aria-expanded="false" aria-label="Expandir resposta sobre a viabilidade de misturar painéis solares e eólica em um mesmo inversor">
+                        <span>Posso conectar painéis solares e um gerador eólico no mesmo inversor híbrido?</span>
+                        <span class="text-xl font-bold line-height-none text-slate-400">+</span>
+                    </button>
+                    <div class="p-4 text-slate-600 hidden border-t border-slate-200 bg-white">
+                        Sim, desde que o inversor híbrido possua entradas específicas dedicadas para cada vetor ou que seja utilizada a topologia de acoplamento em corrente contínua (CC) via barramento comum, onde controladores de carga independentes gerenciam a entrada de cada fonte e direcionam a energia estabilizada para o mesmo banco de baterias centralizado.
+                    </div>
+                </div>
+
+                <div class="border border-slate-200 rounded-lg overflow-hidden">
+                    <button class="w-full text-left p-4 bg-slate-50 hover:bg-slate-100 font-semibold text-slate-800 flex justify-between items-center transition faq-toggle" aria-expanded="false" aria-label="Expandir resposta sobre a durabilidade estimada de um banco de lítio">
+                        <span>Quanto tempo dura um banco de baterias LiFePO4 operando diariamente?</span>
+                        <span class="text-xl font-bold line-height-none text-slate-400">+</span>
+                    </button>
+                    <div class="p-4 text-slate-600 hidden border-t border-slate-200 bg-white">
+                        Trabalhando sob uma profundidade de descarga controlada de 80% e mantendo a temperatura de operação estável nas proximidades de 25°C, um módulo de fosfato de ferro-lítio de boa procedência atinge facilmente a marca de 4000 a 6000 ciclos completos de carga e descarga. Em termos práticos de uso residencial diário, isso representa uma vida útil operacional estimada entre 10 e 15 anos contínuos sem perda severa de capacidade nominal.
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <!-- ==========================================================================
-         RODAPÉ
-         ========================================================================== -->
-    <footer>
-        <div class="footer-grid">
-            <!-- Coluna 1: Branding -->
-            <div class="footer-brand">
-                <div class="footer-logo-container">
-                    <img 
-                        src="imagens/logo transparente 1000px.webp" 
-                        alt="HybridEnergy Logo Rodapé" 
-                        class="footer-logo"
-                        width="180"
-                        height="90"
-                    >
-                </div>
-                <h3 class="footer-tagline">Independência Energética ao seu Alcance</h3>
-                <!-- Ícone Oficial do Pinterest Substituído pela imagem WebP dentro da pasta imagens -->
-                <a href="#" class="social-pinterest-link" aria-label="Visite nosso Pinterest">
-                    <img 
-                        src="imagens/Pinterest ícone 512×512.webp" 
-                        alt="Ícone do Pinterest" 
-                        class="social-pinterest-img"
-                        width="44"
-                        height="44"
-                    >
-                </a>
+    <!-- Footer Institucional -->
+    <footer class="bg-brandDark text-slate-400 text-sm py-12 mt-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <p class="font-bold text-white text-base">Hybrid Energy</p>
+                <p class="mt-2 text-xs">Análises técnicas independentes, engenharia de microrredes e dimensionamento de sistemas de armazenamento de energia.</p>
             </div>
-
-            <!-- Coluna 2: Navegação -->
-            <div class="footer-nav">
-                <h4 class="footer-title">Conheça Mais</h4>
-                <ul class="footer-links">
-                    <li><a href="/politica-de-privacidade">Política de Privacidade</a></li>
-                    <li><a href="/termos-de-uso">Termos de Uso</a></li>
-                    <li><a href="/sobre">Sobre a Hybridenergy</a></li>
-                    <li><a href="/contato">Contato</a></li>
-                </ul>
+            <div class="flex space-x-6 text-xs">
+                <a href="/solar/" class="hover:text-white transition">Painéis & Inversores</a>
+                <a href="/eolica/" class="hover:text-white transition">Aerogeradores</a>
+                <a href="/armazenamento/" class="hover:text-white transition">Baterias Estacionárias</a>
             </div>
-
-            <!-- Coluna 3: Disclaimer de Afiliados -->
-            <div class="footer-disclaimer">
-                <p class="disclaimer-text">
-                    O hybridenergy.com.br utiliza links de afiliados e exibe conteúdos de terceiros (citados em legenda) para fins de análise técnica. Ao comprar pelos nossos links, você apoia nosso trabalho sem custo adicional.
-                </p>
-            </div>
-        </div>
-
-        <!-- Faixa inferior com copyright e descrição de nicho (Data ajustada para 2014-2026) -->
-        <div class="bottom-bar">
-            © 2014-2026 HybridEnergy.com.br. Todos os direitos reservados. | Um site de review sobre energia híbrida.
+            <p class="text-xs text-slate-500">&copy; 2026 Hybrid Energy. Todos os direitos reservados. Proibida a reprodução sem citação de autoria.</p>
         </div>
     </footer>
 
-    <!-- ==========================================================================
-         SCRIPT DE COMPORTAMENTO INTERATIVO
-         ========================================================================== -->
+    <!-- Lógica Interativa JavaScript Vanilla (Non-blocking no final da página) -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-            const navList = document.getElementById('nav-list');
-
-            // Toggle para Menu de Celular
-            mobileMenuBtn.addEventListener('click', () => {
-                navList.classList.toggle('open');
-            });
-
-            // Fecha menus ao clicar fora
-            document.addEventListener('click', (e) => {
-                if (!mobileMenuBtn.contains(e.target) && !navList.contains(e.target)) {
-                    navList.classList.remove('open');
-                }
+            const toggles = document.querySelectorAll('.faq-toggle');
+            
+            toggles.forEach(toggle => {
+                toggle.addEventListener('click', () => {
+                    const content = toggle.nextElementSibling;
+                    const indicator = toggle.querySelector('span:last-child');
+                    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+                    
+                    // Altera estado de visibilidade do painel de conteúdo
+                    if (isExpanded) {
+                        content.classList.add('hidden');
+                        toggle.setAttribute('aria-expanded', 'false');
+                        indicator.textContent = '+';
+                    } else {
+                        content.classList.remove('hidden');
+                        toggle.setAttribute('aria-expanded', 'true');
+                        indicator.textContent = '−';
+                    }
+                });
             });
         });
     </script>
