@@ -1,45 +1,50 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- SEO Técnico Primário -->
-    <title>Fontes de Energia Renovável para Sistemas Híbridos</title>
-    <meta name="description" content="Guia técnico sobre fontes de energia renovável para sistemas híbridos residenciais. Aprenda como funciona a autonomia com painéis solares e baterias.">
-    <link rel="canonical" href="https://hybridenergy.com.br/sistemas-hibridos/">
-    
-    <!-- Open Graph Meta Tags (Redes Sociais & Pinterest) -->
-    <meta property="og:locale" content="pt_BR">
+    <title>Fontes de Energia Renovável e Sistemas Híbridos: Guia</title>
+    <meta name="description" content="Aprenda tudo sobre fontes de energia renovável para sistemas híbridos. Entenda a infraestrutura, eficiência, baterias e garanta autonomia para sua casa.">
+    <link rel="canonical" href="https://hybridenergy.com.br/guias/fontes-de-energia/">
+
     <meta property="og:type" content="article">
-    <meta property="og:title" content="Fontes de Energia Renovável para Sistemas Híbridos">
-    <meta property="og:description" content="Guia técnico sobre fontes de energia renovável para sistemas híbridos residenciais. Aprenda como funciona a autonomia com painéis solares e baterias.">
-    <meta property="og:url" content="https://hybridenergy.com.br/sistemas-hibridos/">
-    <meta property="og:site_name" content="HybridEnergy">
-    <meta property="og:image" content="https://hybridenergy.com.br/img/fontes-de-energia-fossil.webp">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:type" content="image/webp">
-    
-    <!-- Tailwind CSS via CDN -->
+    <meta property="og:url" content="https://hybridenergy.com.br/guias/fontes-de-energia/">
+    <meta property="og:title" content="Fontes de Energia Renovável e Sistemas Híbridos: Guia Técnico">
+    <meta property="og:description" content="Análise profunda sobre fontes convencionais e renováveis. Saiba como arquitetar um sistema híbrido residencial resiliente e econômico.">
+    <meta property="og:image" content="https://hybridenergy.com.br/imagens/energia-hibrida-solar-eolica-residencial-comercial.webp">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fontes de Energia Renovável e Sistemas Híbridos: Guia Técnico">
+    <meta name="twitter:description" content="Análise profunda sobre fontes convencionais e renováveis. Saiba como arquitetar um sistema híbrido residencial resiliente e econômico.">
+    <meta name="twitter:image" content="https://hybridenergy.com.br/imagens/energia-hibrida-solar-eolica-residencial-comercial.webp">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        primary: '#00bcd4',
-                        'primary-dark': '#005F73',
-                        'dark-bg': '#12161a',
-                        'text-dark': '#212529',
-                        'text-muted': '#a0aec0',
+                        brand: {
+                            cyan: '#00bcd4',
+                            darkCyan: '#005F73',
+                            bgDark: '#12161a',
+                            panelDark: '#1a202c',
+                            textMuted: '#a0aec0'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
 
-    <!-- Estilos Incorporados do Cabeçalho e Rodapé Padronizados -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --primary-color: #00bcd4;
@@ -51,15 +56,6 @@
             --text-muted: #a0aec0;
             --font-main: 'Inter', sans-serif;
             --max-width: 1100px;
-        }
-
-        body {
-            font-family: var(--font-main);
-            background-color: #f8fafc;
-            color: var(--text-dark);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
 
         header {
@@ -97,73 +93,35 @@
             gap: 25px;
             list-style: none;
         }
-
-        .nav-item {
-            font-size: 0.9rem;
-            font-weight: 600;
-            position: relative;
-            padding: 8px 0;
-        }
-
-        .nav-item.active a {
-            color: var(--primary-color);
-        }
-
-        .nav-item.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 30px;
-            height: 2px;
-            background-color: var(--primary-color);
-        }
-
-        .nav-item a:hover {
-            color: var(--primary-color);
-        }
-
-        .search-icon {
-            color: var(--primary-color);
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-        }
-
-        .search-icon:hover {
-            opacity: 0.8;
-        }
-
+        
         .menu-toggle {
             display: none;
             background: none;
             border: none;
             color: var(--text-light);
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             cursor: pointer;
         }
 
-        @media (max-width: 868px) {
+        @media (max-width: 768px) {
             .menu-toggle { display: block; }
             .nav-menu {
+                display: none;
+                flex-direction: column;
                 position: absolute;
                 top: 100%;
                 left: 0;
                 width: 100%;
                 background-color: var(--dark-bg);
-                flex-direction: column;
-                gap: 0;
-                padding: 0;
-                max-height: 0;
-                overflow: hidden;
-                transition: max-height 0.3s ease-out;
-                border-bottom: 1px solid #2d3748;
+                padding: 20px;
+                border-bottom: 2px solid #1a202c;
+                gap: 15px;
             }
-            .nav-menu.open { max-height: 400px; overflow-y: auto; }
-            .nav-item { width: 100%; text-align: center; padding: 15px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
-            .nav-item.active::after { display: none; }
+            .nav-menu.open { display: flex; }
         }
+    </style>
 
+    <style>
         footer {
             background-color: var(--dark-bg);
             color: var(--text-light);
@@ -178,6 +136,12 @@
             grid-template-columns: 1.2fr 1fr 1.3fr;
             gap: 40px;
             padding: 0 20px 50px 20px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+            .footer-brand { align-items: center !class; }
+            .footer-tagline { text-align: center; }
         }
 
         .footer-brand {
@@ -209,88 +173,39 @@
             max-width: 290px;
         }
 
-        .social-pinterest-link {
-            display: inline-block;
-            width: 44px;
-            height: 44px;
-            transition: transform 0.3s ease;
-            align-self: center;
-        }
-
-        .social-pinterest-img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            border-radius: 50%;
-        }
-
-        .footer-nav {
-            display: flex;
-            flex-direction: column;
-        }
-
         .footer-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 25px;
-            letter-spacing: 0.5px;
+            font-size: 1.2rem;
+            color: var(--primary-color);
             text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 25px;
+            font-weight: 700;
         }
 
-        .footer-links {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
+        .footer-links { list-style: none; padding: 0; margin: 0; }
+        .footer-links li { margin-bottom: 12px; }
+        .footer-links a { color: var(--text-muted); transition: color 0.2s; }
+        .footer-links a:hover { color: var(--primary-color); }
 
-        .footer-links li {
-            font-size: 1.05rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            padding-bottom: 10px;
-            text-align: left;
+        .footer-disclaimer {
+            grid-column: span 3;
+            border-top: 1px solid #1a202c;
+            padding-top: 30px;
+            margin-top: 10px;
         }
+        @media (max-width: 768px) { .footer-disclaimer { grid-column: span 1; } }
 
-        .footer-links li:last-child { border-bottom: none; }
-        .footer-links a { color: #cbd5e0; display: block; }
-        .footer-links a:hover { color: var(--primary-color); padding-left: 5px; }
-        .footer-disclaimer { display: flex; flex-direction: column; }
-        .disclaimer-text { font-size: 0.95rem; color: #cbd5e0; line-height: 1.6; text-align: left; }
-
-        .bottom-bar {
-            background-color: var(--primary-dark);
-            color: var(--text-light);
-            text-align: center;
-            padding: 15px 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-        }
-
-        @media (max-width: 868px) {
-            .footer-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-            .footer-brand, .footer-logo-container { align-items: center; justify-content: center; }
-            .footer-tagline { text-align: center; }
-            .footer-links li { text-align: center; }
-            .disclaimer-text { text-align: center; }
-        }
+        .disclaimer-text { color: var(--text-muted); font-size: 0.85rem; line-height: 1.6; }
+        .bottom-bar { background-color: #0b0d10; text-align: center; padding: 20px; font-size: 0.85rem; color: var(--text-muted); border-top: 1px solid #12161a; }
     </style>
 
-    <!-- Schema Markup JSON-LD (Tipo: TechArticle) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "TechArticle",
       "headline": "Guia Técnico Completo: Fontes de Energia Renovável para Sistemas Híbridos e Autonomia Residencial",
-      "description": "Guia técnico sobre fontes de energia renovável para sistemas híbridos residenciais. Aprenda como funciona a autonomia com painéis solares e baterias.",
-      "image": [
-        "https://hybridenergy.com.br/img/fontes-de-energia-fossil.webp",
-        "https://hybridenergy.com.br/img/ciclo-de-formacao-do-carvao-mineral.webp",
-        "https://hybridenergy.com.br/img/esquema-funcionamento-usina-nuclear.webp",
-        "https://hybridenergy.com.br/img/energia-hibrida-solar-eolica-residencial-comercial.webp",
-        "https://hybridenergy.com.br/img/sistema-de-energia-hibrida-residencial-solar.webp",
-        "https://hybridenergy.com.br/img/sistema-de-bandeiras-tarifarias-aneel-energia.webp"
-      ],
+      "description": "Análise aprofundada sobre infraestruturas elétricas de fontes renováveis e não renováveis, focado em autonomia e dimensionamento de sistemas híbridos.",
+      "image": "https://hybridenergy.com.br/imagens/energia-hibrida-solar-eolica-residencial-comercial.webp",
       "author": {
         "@type": "Organization",
         "name": "HybridEnergy",
@@ -306,15 +221,15 @@
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "https://hybridenergy.com.br/sistemas-hibridos/"
+        "@id": "https://hybridenergy.com.br/guias/fontes-de-energia/"
       },
-      "inLanguage": "pt-BR"
+      "inLanguage": "pt-BR",
+      "proficiencyLevel": "Expert"
     }
     </script>
 </head>
-<body>
+<body class="bg-gray-50 font-sans text-gray-900 flex flex-col min-h-screen">
 
-    <!-- Estrutura do Header -->
     <header>
         <div class="header-container">
             <a href="/" class="logo-area" aria-label="Página Inicial HybridEnergy">
@@ -333,15 +248,15 @@
 
             <nav>
                 <ul class="nav-menu" id="nav-list">
-                    <li class="nav-item"><a href="/">Início</a></li>
-                    <li class="nav-item"><a href="#solar">Energia Solar</a></li>
-                    <li class="nav-item"><a href="#eolica">Energia Eólica</a></li>
-                    <li class="nav-item"><a href="#armazenamento">Armazenamento</a></li>
-                    <li class="nav-item"><a href="#noticias">Notícias</a></li>
+                    <li class="nav-item active"><a href="/" class="hover:text-brand-cyan transition-colors">Início</a></li>
+                    <li class="nav-item"><a href="#solar" class="hover:text-brand-cyan transition-colors">Energia Solar</a></li>
+                    <li class="nav-item"><a href="#eolica" class="hover:text-brand-cyan transition-colors">Energia Eólica</a></li>
+                    <li class="nav-item"><a href="#armazenamento" class="hover:text-brand-cyan transition-colors">Armazenamento</a></li>
+                    <li class="nav-item"><a href="#noticias" class="hover:text-brand-cyan transition-colors">Notícias</a></li>
                 </ul>
             </nav>
 
-            <div class="search-icon" aria-label="Buscar no Site">
+            <div class="search-icon cursor-pointer text-white hover:text-brand-cyan transition-colors" aria-label="Buscar no Site">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <circle cx="11" cy="11" r="8"></circle>
                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
@@ -350,693 +265,396 @@
         </div>
     </header>
 
-    <!-- Conteúdo Principal do Artigo -->
-    <main class="max-w-[1100px] mx-auto px-4 py-8 md:py-12 flex-grow w-full">
-        <article class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-12 text-slate-800 leading-relaxed space-y-6">
+    <main class="flex-grow max-w-[1100px] mx-auto px-4 py-12 w-full">
+        <article class="bg-white rounded-xl shadow-sm p-6 md:p-12 border border-gray-100 prose max-w-none">
             
-            <!-- Título Principal -->
-            <h1 class="text-3xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight mb-8">
+            <h1 class="text-3xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
                 Guia Técnico Completo: Fontes de Energia Renovável para Sistemas Híbridos e Autonomia Residencial
             </h1>
+            
+            <div class="text-lg text-gray-700 leading-relaxed space-y-6">
+                <p>
+                    Seja para garantir o funcionamento ininterrupto de eletrodomésticos básicos em nossas residências ou para movimentar complexas cadeias industriais, a energia é o motor invisível do desenvolvimento global.
+                </p>
+                <p>
+                    No cenário contemporâneo, marcado por pressões climáticas e reajustes constantes nas contas de luz, compreender a infraestrutura por trás da eletricidade que consumimos deixou de ser uma mera curiosidade acadêmica. Hoje, trata-se de uma necessidade estratégica para quem busca eficiência, blindagem financeira e sustentabilidade de longo prazo.
+                </p>
+                <p>
+                    A busca por independência energética tem levado cada vez mais proprietários de residências e pequenas empresas a avaliarem as <strong>fontes de energia renovável para sistemas híbridos</strong>. Afinal, a energia que consumimos pode ser obtida a partir da transformação de uma ampla variedade de recursos naturais, os quais apresentam origens, disponibilidades e impactos ambientais profundamente distintos.
+                </p>
+                <p>
+                    Para organizar esse vasto panorama global e local, o mercado divide esses recursos em dois grandes grupos: as fontes não renováveis (ou convencionais) e as fontes renováveis (ou alternativas).
+                </p>
+                <p>
+                    Neste guia técnico completo — estruturado com o rigor de um review aprofundado e a clareza de um redator especialista —, analisamos detalhadamente todo o ecossistema de geração, as tecnologias de armazenamento em baterias, os vetores de vanguarda e o impacto direto do cenário tarifário no seu bolso. Se o seu objetivo é entender como arquitetar um sistema resiliente, com excelente custo-benefício e preparado para o futuro, acompanhe esta análise definitiva.
+                </p>
+            </div>
 
-            <p class="text-lg text-slate-600">
-                Seja para garantir o funcionamento ininterrupto de eletrodomésticos básicos em nossas residências ou para movimentar complexas cadeias industriais, a energia é o motor invisível do desenvolvimento global. No cenário contemporâneo, marcado por pressões climáticas e reajustes constantes nas contas de luz, compreender a infraestrutura por trás da eletricidade que consumimos deixou de ser uma mera curiosidade acadêmica. Hoje, trata-se de uma necessidade estratégica para quem busca eficiência, blindagem financeira e sustentabilidade de longo prazo.
-            </p>
-
-            <p class="text-lg text-slate-600">
-                A busca por independência energética tem levado cada vez mais proprietários de residências e pequenas empresas a avaliarem as <strong>fontes de energia renovável para sistemas híbridos</strong>. Afinal, a energia que consumimos pode ser obtida a partir da transformação de uma ampla variedade de recursos naturais, os quais apresentam origens, disponibilidades e impactos ambientais profundamente distintos. Para organizar esse vasto panorama global e local, o mercado divide esses recursos em dois grandes grupos: as fontes não renováveis (ou convencionais) e as fontes renováveis (ou alternativas).
-            </p>
-
-            <p class="text-lg text-slate-600">
-                Neste guia técnico completo — estruturado com o rigor de um review aprofundado e a clareza de um redator especialista —, analisamos detalhadamente todo o ecossistema de geração, as tecnologias de armazenamento em baterias, os vetores de vanguarda e o impacto direto do cenário tarifário no seu bolso. Se o seu objetivo é entender como arquitetar um sistema resiliente, com excelente custo-benefício e preparado para o futuro, acompanhe esta análise definitiva.
-            </p>
-
-            <!-- SEÇÃO 1 -->
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 pt-6 border-t border-slate-100">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-6 border-b-2 border-brand-cyan pb-2">
                 1. O Panorama das Fontes de Energia Não Renováveis: A Base Convencional da Matriz Global
             </h2>
+            <div class="text-gray-700 leading-relaxed space-y-6">
+                <p>
+                    As fontes de energia não renováveis são aquelas cujos recursos disponíveis na natureza são finitos e esgotáveis. Isso ocorre porque o processo natural de reposição desses materiais é extremamente lento, demandando milhões de anos sob condições específicas e severas de temperatura, pressão e soterramento geológico. Consequentemente, quanto maior for o ritmo de extração e consumo dessas fontes, menor será o estoque total remanescente no planeta.
+                </p>
+                <p>
+                    Apesar do apelo crescente por sustentabilidade e da expansão das tecnologias limpas, as fontes não renováveis — compostas principalmente pelo petróleo, carvão mineral, gás natural e energia nuclear — ainda constituem a base principal do suprimento e fornecimento de energia no mundo, sendo por isso chamadas de fontes convencionais.
+                </p>
+            </div>
 
-            <p class="text-slate-600">
-                As fontes de energia não renováveis são aquelas cujos recursos disponíveis na natureza são finitos e esgotáveis. Isso ocorre porque o processo natural de reposição desses materiais é extremamente lento, demandando milhões de anos sob condições específicas e severas de temperatura, pressão e soterramento geológico. Consequentemente, quanto maior for o ritmo de extração e consumo dessas fontes, menor será o estoque total remanescente no planeta.
-            </p>
-
-            <p class="text-slate-600">
-                Apesar do apelo crescentemente por sustentabilidade e da expansão das tecnologias limpas, as fontes não renováveis — compostas principalmente pelo petróleo, carvão mineral, gás natural e energia nuclear — ainda constituem a base principal do suprimento e fornecimento de energia no mundo, sendo por isso chamadas de fontes convencionais.
-            </p>
-
-            <h3 class="text-xl font-semibold text-slate-900 pt-2">
+            <h3 class="text-xl md:text-2xl font-semibold text-gray-950 mt-8 mb-4">
                 1.1 Por que o Mundo Ainda Depende das Fontes Convencionais?
             </h3>
+            <div class="text-gray-700 leading-relaxed mb-6">
+                <p class="mb-4">
+                    A hegemonia dessas fontes na matriz energética global não é por acaso. Ela se apoia em fatores técnicos, geopolíticos e econômicos consolidados ao longo do último século:
+                </p>
+                <ul class="list-disc pl-6 space-y-3">
+                    <li>
+                        <strong>Alto Rendimento Energético:</strong> Possuem uma elevada densidade de energia por unidade de massa ou volume, o que se traduz em alta eficiência termodinâmica durante o processo de transformação.
+                    </li>
+                    <li>
+                        <strong>Preços Atrativos na Origem:</strong> Devido à maturidade do mercado e de seus processos de extração em larga escala, o custo de produção inicial costuma ser altamente competitivo.
+                    </li>
+                    <li>
+                        <strong>Infraestrutura Consolidada:</strong> Existe uma gigantesca rede global de usinas, dutos, gasodutos, ferrovias, rodovias e portos projetada especificamente para o transporte, refino e distribuição desses insumos.
+                    </li>
+                    <li>
+                        <strong>Geração de Empregos e Renda:</strong> O setor de combustíveis fósseis e nuclear é um dos maiores empregadores mundiais, movimentando cadeias de suprimentos extremamente complexas.
+                    </li>
+                </ul>
+            </div>
 
-            <p class="text-slate-600">
-                A hegemonia dessas fontes na matriz energética global não é por acaso. Ela se apoia em fatores técnicos, geopolíticos e econômicos consolidados ao longo do último século:
-            </p>
-
-            <ul class="list-disc list-inside space-y-2 pl-4 text-slate-600">
-                <li><strong>Alto Rendimento Energético:</strong> Possuem uma elevada densidade de energia por unidade de massa ou volume, o que se traduz em alta eficiência termodinâmica durante o processo de transformação.</li>
-                <li><strong>Preços Atrativos na Origem:</strong> Devido à maturidade do mercado e de seus processos de extração em larga escala, o custo de produção inicial costuma ser altamente competitivo.</li>
-                <li><strong>Infraestrutura Consolidada:</strong> Existe uma gigantesca rede global de usinas, dutos, gasodutos, ferrovias, rodovias e portos projetada especificamente para o transporte, refino e distribuição desses insumos.</li>
-                <li><strong>Geração de Empregos e Renda:</strong> O setor de combustíveis fósseis e nuclear é um dos maiores empregadores mundiais, movimentando cadeias de suprimentos extremamente complexas.</li>
-            </ul>
-
-            <h3 class="text-xl font-semibold text-slate-900 pt-2">
+            <h3 class="text-xl md:text-2xl font-semibold text-gray-950 mt-8 mb-4">
                 1.2 Os Principais Usos no Dia a Dia e os Gargalos Ambientais
             </h3>
+            <div class="text-gray-700 leading-relaxed space-y-6">
+                <p>
+                    A aplicação dessas fontes se concentra em três pilares fundamentais: a geração de eletricidade em larga escala (despacho de base), o abastecimento de combustíveis para o sistema de transporte de cargas e passageiros, e o aquecimento térmico residencial e industrial.
+                </p>
+                <p>
+                    No entanto, o uso extensivo de combustíveis fósseis (petróleo, carvão e gás) cobra um preço alto do meio ambiente. Por serem insumos combustíveis, eles precisam passar por processos de queima para liberar a energia armazenada em suas ligações químicas. Esse processo resulta na liberação maciça de gases de efeito estufa (GEE), como o dióxido de carbono CO2, além de gases poluentes que deterioram a qualidade do ar, provocando impactos diretos na saúde pública e acelerando as mudanças climáticas globais.
+                </p>
+                <p>
+                    Para mitigar o esgotamento precoce desses estoques e reduzir os danos ambientais, o setor energético mundial atua hoje em duas frentes: a exploração racional dos recursos existentes por meio do aumento da eficiência energética e o investimento massivo em ciência e tecnologia para o desenvolvimento de fontes renováveis substitutas.
+                </p>
+            </div>
 
-            <p class="text-slate-600">
-                A aplicação dessas fontes se concentra em três pilares fundamentais: a geração de eletricidade em larga escala (despacho de base), o abastecimento de combustíveis para o sistema de transporte de cargas e passageiros, e o aquecimento térmico residencial e industrial.
-            </p>
-
-            <p class="text-slate-600">
-                No entanto, o uso extensivo de combustíveis fósseis (petróleo, carvão e gás) cobra um preço alto do meio ambiente. Por serem insumos combustíveis, eles precisam passar por processos de queima para liberar a energia armazenada em suas ligações químicas. Esse processo resulta na liberação maciça de gases de efeito estufa (GEE), como o dióxido de carbono CO2, além de gases poluentes que deterioram a qualidade do ar, provocando impactos diretos na saúde pública e acelerando as mudanças climáticas globais.
-            </p>
-
-            <p class="text-slate-600">
-                Para mitigar o esgotamento precoce desses estoques e reduzir os danos ambientais, o setor energético mundial atua hoje em duas frentes: a exploração racional dos recursos existentes por meio do aumento da eficiência energética e o investimento massivo em ciência e tecnologia para o desenvolvimento de fontes renováveis substitutas.
-            </p>
-
-            <!-- SEÇÃO 2 -->
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 pt-6 border-t border-slate-100">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-6 border-b-2 border-brand-cyan pb-2">
                 2. O Universo dos Combustíveis Fósseis: Petróleo, Gás Natural e Carvão Mineral
             </h2>
-
-            <p class="text-slate-600">
-                Os combustíveis fósseis são formados pelo depósito profundo de matéria orgânica — restos de plantas, algas e animais mortos — que permaneceu soterrada por centenas de milhões de anos sob condições físico-químicas muito específicas de alta pressão e temperatura.
-            </p>
-
-            <!-- Tratamento de Imagem Otimizada -->
-            <div class="my-8 rounded-xl overflow-hidden border border-slate-200 bg-slate-50 aspect-video w-full max-w-3xl mx-auto shadow-sm">
-                <img 
-                    src="img/fontes-de-energia-fossil.webp" 
-                    alt="Infográfico explicativo em três etapas mostrando o processo geológico de formação do petróleo e gás natural" 
-                    loading="lazy" 
-                    decoding="async"
-                    class="w-full h-full object-cover"
-                    width="800"
-                    height="450"
-                >
+            <div class="text-gray-700 leading-relaxed space-y-6 mb-8">
+                <p>
+                    Os combustíveis fósseis são formados pelo depósito profundo de matéria orgânica — restos de plantas, algas e animais mortos — que permaneceu soterrada por centenas de milhões de anos sob condições físico-químicas muito específicas de alta pressão e temperatura.
+                </p>
             </div>
 
-            <h3 class="text-xl font-semibold text-slate-900 pt-2">
+            <div class="my-8 flex flex-col items-center bg-gray-100 p-4 rounded-xl border border-gray-200">
+                <img 
+                    src="imagens/fontes-de-energia-fossil.webp" 
+                    alt="Infográfico explicativo em três etapas mostrando o processo geológico de formação do petróleo e gás natural" 
+                    loading="lazy"
+                    width="1000"
+                    height="500"
+                    class="rounded-lg max-w-full h-auto shadow-sm"
+                >
+                <span class="text-xs text-gray-500 mt-2 text-center">Infográfico explicativo sobre o ciclo geológico de formação das fontes fósseis.</span>
+            </div>
+
+            <h3 class="text-xl md:text-2xl font-semibold text-gray-950 mt-8 mb-4">
                 2.1 Petróleo e Gás Natural: Formação Geológica e Extração
             </h3>
+            <div class="text-gray-700 leading-relaxed space-y-6">
+                <p>
+                    Geologicamente, o petróleo e o gás natural ocorrem em formações denominadas bacias sedimentares. Essas áreas correspondem a porções da superfície terrestre ou do fundo do mar que, por serem mais baixas e planas que o relevo circundante, acumularam espessas camadas de fragmentos de rochas (sedimentos) e matéria orgânica ao longo das eras geológicas.
+                </p>
+                <p>
+                    Ao contrário do que muitos imaginam, o petróleo não fica armazenado em grandes cavernas subterrâneas ou "lagos" líquidos. Ele fica retido em microporos (aberturas minúsculas) localizados no interior de rochas sedimentares porosas, conhecidas tecnicamente como rochas reservatórios.
+                </p>
+                <p>
+                    Atualmente, o ranking dos maiores produtores mundiais desses hidrocarbonetos includes potências como os Estados Unidos, a Arábia Saudita, a Rússia e o Iraque. Em algumas regiões específicas do planeta, como no Canadá, o petróleo também pode ser encontrado misturado a areias betuminosas próximas à superfície, exigindo métodos diferenciados de mineração e refino.
+                </p>
+            </div>
 
-            <p class="text-slate-600">
-                Geologicamente, o petróleo e o gás natural ocorrem em formações denominadas bacias sedimentares. Essas áreas correspondem a porções da superfície terrestre ou do fundo do mar que, por serem mais baixas e planas que o relevo circundante, acumularam espessas camadas de fragmentos de rochas (sedimentos) e matéria orgânica ao longo das eras geológicas.
-            </p>
-
-            <p class="text-slate-600">
-                Ao contrário do que muitos imaginam, o petróleo não fica armazenado em grandes cavernas subterrâneas ou "lagos" líquidos. Ele fica retido em microporos (aberturas minúsculas) localizados no interior de rochas sedimentares porosas, conhecidas tecnicamente como rochas reservatórios. Atualmente, o ranking dos maiores produtores mundiais desses hidrocarbonetos inclui potências como os Estados Unidos, a Arábia Saudita, a Rússia e o Iraque. Em algumas regiões específicas do planeta, como no Canadá, o petróleo também pode ser encontrado misturado a areias betuminosas próximas à superfície, exigindo métodos diferenciados de mineração e refino.
-            </p>
-
-            <h4 class="text-lg font-semibold text-slate-900">
+            <h4 class="text-lg md:text-xl font-semibold text-gray-900 mt-6 mb-3">
                 2.1.1 A Indústria Petrolífera no Brasil e o Desafio Técnico do Pré-Sal
             </h4>
+            <div class="text-gray-700 leading-relaxed space-y-6">
+                <p>
+                    No cenário brasileiro, a produção de petróleo e gás natural ocorre de forma predominantemente marítima, com especial destaque para a região Sudeste. O grande divisor de águas da autonomia energética nacional foi a descoberta e exploração do horizonte geológico conhecido como Pré-sal.
+                </p>
+                <p>
+                    O petróleo do Pré-sal representa um dos maiores desafios de engenharia do mundo. Os poços estão localizados a grandes profundidades marinhas, posicionados abaixo de uma extensa, instável e plástica camada de sal no subsolo do assoalho oceânico. A extração nesse ambiente exige sondas de perfuração de altíssima tecnologia, modelagem sísmica computadorizada e ligas metálicas especiais resistentes à corrosão e à extrema pressão hidrostática e litostática.
+                </p>
+            </div>
 
-            <p class="text-slate-600">
-                No cenário brasileiro, a produção de petróleo e gás natural ocorre de forma predominantemente marítima, com especial destaque para a região Sudeste. O grande divisor de águas da autonomia energética nacional foi a descoberta e exploração do horizonte geológico conhecido como Pré-sal.
-            </p>
-
-            <p class="text-slate-600">
-                O petróleo do Pré-sal representa um dos maiores desafios de engenharia do mundo. Os poços estão localizados a grandes profundidades marinhas, posicionados abaixo de uma extensa, instável e plástica camada de sal no subsolo do assoalho oceânico. A extração nesse ambiente exige sondas de perfuração de altíssima tecnologia, modelagem sísmica computadorizada e ligas metálicas especiais resistentes à corrosão e à extrema pressão hidrostática e litostática.
-            </p>
-
-            <h4 class="text-lg font-semibold text-slate-900">
+            <h4 class="text-lg md:text-xl font-semibold text-gray-900 mt-6 mb-3">
                 2.1.2 A Distinção Técnico: Exploração Onshore vs. Offshore
             </h4>
+            <div class="text-gray-700 leading-relaxed space-y-4">
+                <p>
+                    Dentro do jargão técnico da engenharia de energia, utilizam-se dois termos fundamentais para categorizar a localização geográfica e operacional das bacias sedimentares exploradas:
+                </p>
+                <div class="grid md:grid-cols-2 gap-4 my-4">
+                    <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-brand-darkCyan">
+                        <span class="font-bold block text-brand-darkCyan mb-1">Onshore:</span>
+                        Refere-se às operações de exploração e produção realizadas em terra firme. Apresenta custos logísticos e operacionais comparativamente mais baixos, embora os volumes de produção por poço tendam a ser menores.
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg border-l-4 border-brand-cyan">
+                        <span class="font-bold block text-brand-cyan mb-1">Offshore:</span>
+                        Refere-se à exploração conduzida em bacias sedimentares marítimas, em pleno mar. Exige o emprego de plataformas flutuantes complexas e infraestrutura submarina robusta, onde se concentra a maior fatia do Pré-sal brasileiro.
+                    </div>
+                </div>
+            </div>
 
-            <p class="text-slate-600">
-                Dentro do jargão técnico da engenharia de energia, utilizam-se dois termos fundamentais para categorizar a localização geográfica e operacional das bacias sedimentares exploradas:
-            </p>
-
-            <ul class="list-disc list-inside space-y-2 pl-4 text-slate-600">
-                <li><strong>Onshore:</strong> Refere-se às operações de exploração e produção realizadas em terra firme. Apresenta custos logísticos e operacionais comparativamente mais baixos, embora os volumes de produção por poço tendam a ser menores em comparação com as grandes bacias marítimas modernas.</li>
-                <li><strong>Offshore:</strong> Refere-se à exploração conduzida em bacias sedimentares marítimas, ou seja, em pleno mar. Exige o emprego de plataformas flutuantes ou fixas de alta complexidade (semi submersíveis, navios do tipo FPSO, jaquetas) e infraestrutura submarina robusta. É onde se concentra a maior fatia da produção de alta produtividade do Pré-sal brasileiro.</li>
-            </ul>
-
-            <h4 class="text-lg font-semibold text-slate-900">
+            <h4 class="text-lg md:text-xl font-semibold text-gray-900 mt-6 mb-3">
                 2.1.3 O Petróleo Além da Energia: Presença Invisível no Nosso Cotidiano
             </h4>
+            <div class="text-gray-700 leading-relaxed space-y-4">
+                <p>
+                    A importância do petróleo vai muito além do refino de gasolina, óleo diesel e querosene de aviação para a movimentação de veículos e maquinários. Os derivados petroquímicos fazem parte da nossa rotina durante 24 horas por dia:
+                </p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li><strong>Higiene e Saneamento:</strong> A escova de dentes e as tubulações de PVC da água potável são polímeros diretos do refino do petróleo.</li>
+                    <li><strong>Vestuário e Utilidades Domésticas:</strong> Fibras sintéticas em roupas (poliéster, nylon) e as garrafas PET ou recipientes de cozinha dependem dessa cadeia.</li>
+                    <li><strong>Produção de Alimentos e Agronegócio:</strong> Base para a formulação de adubos sintéticos, fertilizantes e defensivos agrícolas essenciais para a alta produtividade do campo.</li>
+                    <li><strong>Educação e Escritório:</strong> Canetas esferográficas, colas plásticas, fitas adesivas e tintas contêm formulações plásticas derivadas.</li>
+                    <li><strong>Descanso e Conforto:</strong> O colchão e o travesseiro de espuma de poliuretano expandido originam-se diretamente das estruturas do processamento de óleo bruto.</li>
+                </ul>
+                <p class="bg-amber-50 p-4 rounded-lg border border-amber-200 italic">
+                    Devido a essa onipresença e à alta durabilidade dos polímeros no meio ambiente, torna-se um imperativo de consumo consciente a prática contínua de reutilização e reciclagem do plástico, mitigando os severos danos acumulados que o descarte incorreto causa à fauna, à flora e aos oceanos.
+                </p>
+            </div>
 
-            <p class="text-slate-600">
-                A importância do petróleo vai muito além do refino de gasolina, óleo diesel e querosene de aviação para a movimentação de veículos e maquinários. Os derivados petroquímicos fazem parte da nossa rotina durante 24 horas por dia, manifestando-se em produtos que consumimos e utilizamos sem nos darmos conta de sua origem fóssil:
-            </p>
-
-            <ul class="list-disc list-inside space-y-2 pl-4 text-slate-600">
-                <li><strong>Higiene e Saneamento:</strong> A escova de dentes utilizada pela manhã é feita de plástico injetado derivado de petróleo. A água potável que chega até as torneiras residenciais trafega por tubulações de PVC (Policloreto de Vinila), um polímero cuja matéria-prima direta provém do refino do petróleo.</li>
-                <li><strong>Vestuário e Utilidades Domésticas:</strong> Fibras sintéticas presentes em roupas, meias e calçados (como poliéster, nylon e elastano) são sintetizadas a partir de hidrocarbonetos. Na cozinha, os utensílios plásticos para conservação de alimentos e as garrafas PET de água e sucos dependem dessa mesma cadeia produtiva.</li>
-                <li><strong>Produção de Alimentos e Agronegócio:</strong> Paradoxalmente, a comida que chega à nossa mesa é cultivada com o auxílio direto do petróleo, que serve como base para a formulação de adubos sintéticos, fertilizantes e defensivos agrícolas essenciais para a alta produtividade do campo.</li>
-                <li><strong>Educação e Escritório:</strong> Materiais escolares comuns, tais como canetas esferográficas, colas plásticas, fitas adesivas (durex), tintas e pincéis contém formulações químicas baseadas em polímeros plásticos derivados do óleo bruto.</li>
-                <li><strong>Descanso e Conforto:</strong> No final do dia, o colchão e o travesseiro de espuma de poliuretano expandido garantem o repouso sobre estruturas químicas originadas diretamente do processamento do petróleo.</li>
-            </ul>
-
-            <p class="text-slate-600">
-                Devido a essa onipresença e à alta durabilidade dos polímeros no meio ambiente, torna-se um imperativo de consumo consciente a prática contínua de reutilização e reciclagem do plástico, mitigando os severos danos acumulados que o descarte incorreto causa à fauna, à flora e aos oceanos.
-            </p>
-
-            <h3 class="text-xl font-semibold text-slate-900 pt-2">
+            <h3 class="text-xl md:text-2xl font-semibold text-gray-950 mt-8 mb-4">
                 2.2 Carvão Mineral: Formação e Distribuição Geopolítica
             </h3>
-
-            <p class="text-slate-600">
-                O carvão mineral é uma rocha sedimentar combustível que se diferencia completamente do carvão vegetal (obtido pela carbonização de lenha). Ele é encontrado em depósitos subterrâneos chamados jazidas, originadas a partir do soterramento e fossilização de antigas florestas e pântanos que existiram há mais de 200 milhões de anos (durante os períodos Carbonífero e Permiano).
-            </p>
-
-            <!-- Tratamento de Imagem Otimizada -->
-            <div class="my-8 rounded-xl overflow-hidden border border-slate-200 bg-slate-50 aspect-video w-full max-w-3xl mx-auto shadow-sm">
-                <img 
-                    src="img/ciclo-de-formacao-do-carvao-mineral.webp" 
-                    alt="Infográfico didático em três estágios detalhando o ciclo de formação do carvão mineral: a floresta primitiva com plantas em pântanos, o soterramento por camadas de sedimento e a transformação fóssil sob alta pressão e calor ao longo de milhões de anos" 
-                    loading="lazy" 
-                    decoding="async"
-                    class="w-full h-full object-cover"
-                    width="800"
-                    height="450"
-                >
+            <div class="text-gray-700 leading-relaxed space-y-6">
+                <p>
+                    O carvão mineral é uma rocha sedimentar combustível que se diferencia completamente do carvão vegetal (obtido pela carbonização de lenha). Ele é encontrado em depósitos subterrâneos chamados jazidas, originadas a partir do soterramento e fossilização de antigas florestas e pântanos que existiram há mais de 200 milhões de anos (durante os períodos Carbonífero e Permiano).
+                </p>
             </div>
 
-            <p class="text-slate-600">
-                As maiores e mais ricas jazidas mundiais de carvão mineral concentram-se geopoliticamente nos Estados Unidos, na Rússia e na China. No território brasileiro, as ocorrências de carvão mineral concentram-se predominantemente na região Sul, com destaque para os estados do Rio Grande do Sul e Santa Catarina. Embora o carvão nacional possua um menor poder calorífico e maior teor de cinzas e enxofre em comparação ao carvão importado da Austrália ou Colômbia, ele desempenha um papel estratégico na segurança do suprimento elétrico da região meridional do país através de usinas termelétricas locais posicionadas próximas às minas.
-            </p>
+            <div class="my-8 flex flex-col items-center bg-gray-100 p-4 rounded-xl border border-gray-200">
+                <img 
+                    src="imagens/ciclo-de-formacao-do-carvao-mineral.webp" 
+                    alt="Infográfico didático em três estágios detalhando o ciclo de formação do carvão mineral: a floresta primitiva com plantas em pântanos, o soterramento por camadas de sedimento e a transformação fóssil sob alta pressão e calor ao longo de milhões de anos" 
+                    loading="lazy"
+                    width="1000"
+                    height="500"
+                    class="rounded-lg max-w-full h-auto shadow-sm"
+                >
+                <span class="text-xs text-gray-500 mt-2 text-center">Etapas do processo geológico de fossilização da matéria orgânica vegetal.</span>
+            </div>
 
-            <h3 class="text-xl font-semibold text-slate-900 pt-2">
+            <div class="text-gray-700 leading-relaxed space-y-6">
+                <p>
+                    As maiores e mais ricas jazidas mundiais de carvão mineral concentram-se geopoliticamente nos Estados Unidos, na Rússia e na China. No território brasileiro, as ocorrências de carvão mineral concentram-se predominantemente na região Sul, com destaque para os estados do Rio Grande do Sul e Santa Catarina.
+                </p>
+                <p>
+                    Embora o carvão nacional possua um menor poder calorífico e maior teor de cinzas e enxofre em comparação ao carvão importado da Austrália ou Colômbia, ele desempenha um papel estratégico na segurança do suprimento elétrico da região meridional do país através de usinas termelétricas locais posicionadas próximas às minas.
+                </p>
+            </div>
+
+            <h3 class="text-xl md:text-2xl font-semibold text-gray-950 mt-8 mb-4">
                 2.3 Rotas de Conversão e Riscos Ambientais Associados
             </h3>
+            <div class="text-gray-700 leading-relaxed space-y-6">
+                <p>
+                    Para que a energia armazenada nos combustíveis fósseis se transforme em energia útil, eles precisam ser direcionados a equipamentos de conversão térmica ou mecânica, tais como caldeiras industriais, turbinas a vapor e motores de combustão interna. Nas usinas termelétricas, a queima do combustível aquece a água em uma caldeira, gerando vapor de alta pressão que aciona uma turbina conectada a um gerador elétrico. Nos veículos automotores, a explosão controlada do combustível no interior dos cilindros gera energia cinética (movimento).
+                </p>
+                <p>
+                    No mercado brasileiro, o gás natural cumpre ainda o papel de fonte de energia térmica direta nas residências e comércios, sendo queimado em fogões para a cocção de alimentos e em aquecedores de passagem para o aquecimento da água do banho.
+                </p>
+            </div>
 
-            <p class="text-slate-600">
-                Para que a energia armazenada nos combustíveis fósseis se transforme em energia útil, eles precisam ser direcionados a equipamentos de conversão térmica ou mecânica, tais como caldeiras industriais, turbinas a vapor e motores de combustão interna.
-            </p>
-
-            <ul class="list-disc list-inside space-y-2 pl-4 text-slate-600">
-                <li>Nas usinas termelétricas, a queima do combustível aquece a água em uma caldeira, gerando vapor de alta pressão que aciona uma turbina conecta a um gerador elétrico.</li>
-                <li>Nos veículos automotores, a explosão controlada do combustível no interior dos cilindros gera energia cinética (movimento).</li>
-                <li>No mercado brasileiro, o gás natural cumpre ainda o papel de fonte de energia térmica direta nas residências e comércios, sendo queimado em fogões para a cocção de alimentos e em aquecedores de passagem para o aquecimento da água do banho.</li>
-            </ul>
-
-            <h4 class="text-lg font-semibold text-slate-900">
+            <h4 class="text-lg md:text-xl font-semibold text-gray-900 mt-6 mb-3">
                 2.3.1 Impactos da Cadeia Operacional dos Fósseis
             </h4>
+            <div class="text-gray-700 leading-relaxed mb-8">
+                <p class="mb-4">
+                    A operação e manutenção da cadeia de combustíveis fósseis carregam severos riscos socioambientais que exigem monitoramento rigoroso e constante:
+                </p>
+                <ul class="list-disc pl-6 space-y-3">
+                    <li><strong>Emissões Atmosféricas:</strong> A combustão inevitavelmente gera subprodutos poluentes (óxidos de enxofre - Ox, óxidos de nitrogênio - NOx, material particulado) e gases de efeito estufa (CO2).</li>
+                    <li><strong>Vazamentos e Contaminações:</strong> Falhas catastróficas resultando em vazamentos de óleo bruto durante as etapas de extração oceânica ou no transporte por meio de navios petroleiros e extensas malhas de dutos.</li>
+                    <li><strong>Impactos da Mineração de Carvão:</strong> Sem a contenção adequada e o tratamento de efluentes, as águas pluviais podem lavar as pilhas de rejeitos e lixiviar metais pesados e compostos ácidos diretamente para os rios locais.</li>
+                    <li><strong>Saúde Ocupacional:</strong> As atividades expõem os operadores a ambientes insalubres, riscos de explosões, inalação de poeiras tóxicas e contaminações químicas crônicas.</li>
+                </ul>
+            </div>
 
-            <p class="text-slate-600">
-                A operação e manutenção da cadeia de combustíveis fósseis carregam severos riscos socioambientais que exigem monitoramento rigoroso e constante por parte de empresas e órgãos de defesa ambiental:
-            </p>
-
-            <ol class="list-decimal list-inside space-y-2 pl-4 text-slate-600">
-                <li><strong>Emissões Atmosféricas:</strong> Como mencionado, a combustão inevitavelmente gera subprodutos poluentes (óxidos de enxofre - Ox, óxidos de nitrogênio - NOx, material particulado) e gases de efeito estufa (CO2).</li>
-                <li><strong>Vazamentos e Contaminações:</strong> Ao longo da cadeia logística do petróleo e gás, podem ocorrer falhas catastróficas resultando em vazamentos de óleo bruto durante as etapas de extração oceânica ou no transporte por meio de navios petroleiros, caminhões-tanque e extensas malhas de dutos.</li>
-                <li><strong>Impactos da Mineração de Carvão:</strong> A extração do carvão mineral da terra (mineração a céu aberto ou subterrânea) exige cuidados extremos. Sem a contenção adequada e o tratamento de efluentes, as águas pluviais podem lavar as pilhas de rejeitos e lixiviar metais pesados e compostos ácidos diretamente para os leitos dos rios locais, destruindo ecossistemas aquáticos inteiros.</li>
-                <li><strong>Saúde Ocupacional:</strong> As atividades de extração de carvão, petróleo e gás expõem os operadores a ambientes insalubres, riscos de explosões, inalação de poeiras tóxicas e contaminações químicas crônicas, exigindo protocolos rígidos de engenharia de segurança do trabalho.</li>
-            </ol>
-
-            <!-- SEÇÃO 3 -->
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 pt-6 border-t border-slate-100">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-6 border-b-2 border-brand-cyan pb-2">
                 3. Energia Nuclear: A Alta Tecnologia da Fissão Atômica
             </h2>
-
-            <p class="text-slate-600">
-                A energia nuclear representa uma vertente bastante distinta dentro das fontes não renováveis, completamente desvinculada da queima de combustíveis fósseis. Para compreender o seu funcionamento técnico, é necessário analisar a matéria em escala microscópica: todos os materiais ao nosso redor são compostos por agregados moleculares que, por sua vez, são formados por estruturas fundamentais chamadas átomos.
-            </p>
-
-            <p class="text-slate-600">
-                A energia nuclear é o calor liberado a partir de reações físicas controladas que alteram a estrutura interna do núcleo de determinados átomos caracterizados como radioativos e instáveis.
-            </p>
-
-            <!-- Tratamento de Imagem Otimizada -->
-            <div class="my-8 rounded-xl overflow-hidden border border-slate-200 bg-slate-50 aspect-video w-full max-w-3xl mx-auto shadow-sm">
-                <img 
-                    src="img/esquema-funcionamento-usina-nuclear.webp" 
-                    alt="Diagrama esquemático e técnico detalhando as etapas de geração de eletricidade numa usina nuclear: o reator produzindo vapor de alta pressão, o acionamento mecânico da turbina acoplada ao gerador elétrico e o transformador de saída, integrado ao circuito de resfriamento com torre de condensação" 
-                    loading="lazy" 
-                    decoding="async"
-                    class="w-full h-full object-cover"
-                    width="800"
-                    height="450"
-                >
+            <div class="text-gray-700 leading-relaxed space-y-6">
+                <p>
+                    A energia nuclear representa uma vertente bastante distinta dentro das fontes não renováveis, completamente desvinculada da queima de combustíveis fósseis. Para compreender o seu funcionamento técnico, é necessário analisar a matéria em escala microscópica: todos os materiais ao nosso redor são compostos por agregados moleculares que, por sua vez, são formados por estruturas fundamentais chamadas átomos. A energia nuclear é o calor liberado a partir de reações físicas controladas que alteram a estrutura interna do núcleo de determinados átomos caracterizados como radioativos e instáveis.
+                </p>
             </div>
 
-            <h3 class="text-xl font-semibold text-slate-900 pt-2">
+            <div class="my-8 flex flex-col items-center bg-gray-100 p-4 rounded-xl border border-gray-200">
+                <img 
+                    src="imagens/esquema-funcionamento-usina-nuclear.webp" 
+                    alt="Diagrama esquemático e técnico detalhando as etapas de geração de eletricidade numa usina nuclear: o reator produzindo vapor de alta pressão, o acionamento mecânico da turbina acoplada ao gerador elétrico e o transformador de saída, integrado ao circuito de resfriamento com torre de condensação" 
+                    loading="lazy"
+                    width="1000"
+                    height="550"
+                    class="rounded-lg max-w-full h-auto shadow-sm"
+                >
+                <span class="text-xs text-gray-500 mt-2 text-center">Arquitetura de conversão termodinâmica em usinas de fissão nuclear.</span>
+            </div>
+
+            <h3 class="text-xl md:text-2xl font-semibold text-gray-950 mt-8 mb-4">
                 3.1 O Processo Técnico da Fissão Nuclear e o Papel do Urânio
             </h3>
+            <div class="text-gray-700 leading-relaxed space-y-6">
+                <p>
+                    O princípio operacional empregado pelas usinas nucleares comerciais baseia-se no fenômeno da fissão nuclear. Esse processo consiste na divisão controlada do núcleo de um elemento pesado em dois núcleos de elementos químicos menores e diferentes, transformação esta que vem acompanhada da liberação de uma quantidade colossal de energia térmica e de novos nêutrons, que sustentam a reação em cadeia.
+                </p>
+                <p>
+                    Na natureza, o único elemento químico natural perfeitamente apto a sustentar uma reação de fissão nuclear em cadeia para geração comercial de energia é o Urânio, mais especificamente o seu isótopo Urânio-235 (U235). O urânio é um mineral metálico encontrado na crosta terrestre com relativa abundância. Contudo, antes de ser inserido nas varetas de combustível do reator, o minério bruto precisa passar por um complexo ciclo industrial que envolve processos de mineração, purificação química, conversão gasosa e concentração do seu isótopo físsil, uma etapa altamente tecnológica denominada enriquecimento de urânio.
+                </p>
+            </div>
 
-            <p class="text-slate-600">
-                O princípio operacional empregado pelas usinas nucleares comerciais baseia-se no fenômeno da fissão nuclear. Esse processo consiste na divisão controlada do núcleo de um elemento pesado em dois núcleos de elementos químicos menores e diferentes, transformação esta que vem acompanhada da liberação de uma quantidade colossal de energia térmica e de novos nêutrons, que sustentam a reação em cadeia.
-            </p>
-
-            <p class="text-slate-600">
-                Na natureza, o único elemento químico natural perfeitamente apto a sustentar uma reação de fissão nuclear em cadeia para geração comercial de energia é o Urânio, mais especificamente o seu isótopo Urânio-235 (U235). O urânio é um mineral metálico encontrado na crosta terrestre com relativa abundância. Contudo, antes de ser inserido nas varetas de combustível do reator, o minério bruto precisa passar por um complexo ciclo industrial que envolve processos de mineração, purificação química, conversão gasosa e concentração do seu isótopo físsil, uma etapa altamente tecnológica denominada enriquecimento de urânio.
-            </p>
-
-            <h3 class="text-xl font-semibold text-slate-900 pt-2">
+            <h3 class="text-xl md:text-2xl font-semibold text-gray-950 mt-8 mb-4">
                 3.2 Engenharia de uma Usina Nuclear: Da Física à Eletricidade
             </h3>
+            <div class="text-gray-700 leading-relaxed space-y-6">
+                <p>
+                    Uma usina nuclear funciona de forma análoga a uma termelétrica convencional, porém a sua fonte primária de calor não provém do carvão ou do gás, mas sim do reator nuclear. A energia térmica liberada de forma contínua durante a fissão do urânio é transferida para um fluido refrigerante (geralmente água purificada mantida sob altíssima pressão para não evaporar dentro do vaso do reator). Essa água aquecida circula por um circuito primário fechado e transfere seu calor para um circuito secundário através de um trocador de calor (gerador de vapor).
+                </p>
+                <p>
+                    No circuito secundário, a água evapora sob alta pressão. Este vapor é conduzido em alta velocidade para impactar as pás de grandes turbinas, fazendo-as girar mecanicamente. O eixo da turbina, acoplado diretamente a um gerador elétrico, converte essa energia mecânica rotacional em energia elétrica utilizável, que é então injetada nas linhas de transmissão através de subestações elevadoras. Embora seja classificada como uma fonte esgotável devido à finitude das reservas de urânio, a energia nuclear é amplamente reconhecida como uma fonte limpa sob a ótica atmosférica, dado que o seu processo operacional não emite gases de efeito estufa.
+                </p>
+            </div>
 
-            <p class="text-slate-600">
-                Uma usina nuclear funciona de forma análoga a uma termelétrica convencional, porém a sua fonte primária de calor não provém do carvão ou do gás, mas sim do reator nuclear. A energia térmica liberada de forma contínua durante a fissão do urânio é transferida para um fluido refrigerante (geralmente água purificada mantida sob altíssima pressão para não evaporar dentro do vaso do reator).
-            </p>
-
-            <p class="text-slate-600">
-                Essa água aquecida circula por um circuito primário fechado e transfere seu calor para um circuito secundário através de um trocador de calor (gerador de vapor). No circuito secundário, a água evapora sob alta pressão. Este vapor é conduzido em alta velocidade para impactar as pás de grandes turbinas, fazendo-as girar mecanicamente. O eixo da turbina, acoplado diretamente a um gerador elétrico, converte essa energia mecânica rotacional em energia elétrica utilizável, que é então injetada nas linhas de transmissão através de subestações elevadoras. Embora seja classificada como uma fonte esgotável devido à finitude das reservas de urânio, a energia nuclear é amplamente reconhecida como uma fonte limpa sob a ótica atmosférica, dado que o seu processo operacional não emite gases de efeito estufa.
-            </p>
-
-            <h3 class="text-xl font-semibold text-slate-900 pt-2">
+            <h3 class="text-xl md:text-2xl font-semibold text-gray-950 mt-8 mb-4">
                 3.3 Gerenciamento de Rejeitos, Segurança Operacional e o Cenário no Brasil
             </h3>
+            <div class="text-gray-700 leading-relaxed space-y-6">
+                <p>
+                    Apesar da grande vantagem de não poluir o ar, a tecnologia nuclear impõe dois grandes desafios técnicos, logísticos e de segurança pública:
+                </p>
+                <ul class="list-disc pl-6 space-y-3">
+                    <li><strong>Destinação dos Rejeitos Radioativos:</strong> O material que sobra da reação química (lixo nuclear) continua emitindo radiação perigosa por milhares de anos. Esses rejeitos precisam ser encapsulados em barreiras multicamadas (chumbo, concreto, aço) e armazenados temporariamente em piscinas de resfriamento e, posteriormente, em depósitos geológicos profundos de alta segurança.</li>
+                    <li><strong>Segurança contra Acidentes:</strong> A possibilidade de falhas catastróficas que resultem no derretimento do núcleo do reator é uma preocupação histórica (marcada por eventos como Chernobyl e Fukushima). No entanto, a engenharia de segurança das usinas modernas reduziu essa probabilidade a níveis estatisticamente ínfimos.</li>
+                </ul>
+                <p>
+                    No contexto nacional, o Brasil conta com uma infraestrutura centralizada em Angra dos Reis, no estado do Rio de Janeiro. O país possui atualmente duas usinas nucleares em operação comercial plena (Angra 1 e Angra 2) e uma terceira unidade em ritmo de construção (Angra 3), todas sob a gestão da Eletronuclear, aproveitando o fato de o Brasil possuir uma das maiores reservas mundiais de minério de urânio.
+                </p>
+            </div>
 
-            <p class="text-slate-600">
-                Apesar da grande vantagem de não poluir o ar, a tecnologia nuclear impõe dois grandes desafios técnicos, logísticos e de segurança pública:
-            </p>
-
-            <ul class="list-disc list-inside space-y-2 pl-4 text-slate-600">
-                <li><strong>Destinação dos Rejeitos Radioativos:</strong> Após o esgotamento do potencial energético do urânio dentro do reator, o material que sobra da reação química (conhecido popularmente como lixo nuclear) continua emitindo radiação perigosa por milhares de anos. Esses rejeitos de alta atividade precisam ser encapsulados em barreiras multicamadas (chumbo, concreto, aço) e armazenados temporariamente em piscinas de resfriamento e, posteriormente, em depósitos geológicos profundos de alta segurança.</li>
-                <li><strong>Segurança contra Acidentes:</strong> A possibilidade de falhas catastróficas que resultem no derretimento do núcleo do reator e no consequente vazamento de radiação para a atmosfera é uma preocupação histórica (marcada por eventos como Chernobyl e Fukushima). No entanto, a engenharia de segurança das usinas modernas reduziu essa probabilidade a níveis estatisticamente ínfimos, utilizando sistemas de contenção robustos e proteção passiva independentes de intervenção humana.</li>
-            </ul>
-
-            <p class="text-slate-600">
-                No contexto nacional, o Brasil conta com uma infraestrutura centralizada em Angra dos Reis, no estado do Rio de Janeiro. O país possui atualmente duas usinas nucleares em operação comercial plena (Angra 1 e Angra 2) e uma terceira unidade em ritmo de construção (Angra 3), todas sob a gestão da Eletronuclear, aproveitando o fato de o Brasil possuir uma das maiores reservas mundiais de minério de urânio.
-            </p>
-
-            <!-- SEÇÃO 4 -->
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 pt-6 border-t border-slate-100">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mt-12 mb-6 border-b-2 border-brand-cyan pb-2">
                 4. O Bloco de Geração Coletiva e Conceitos: A Engenharia dos Sistemas Híbridos
             </h2>
-
-            <p class="text-slate-600">
-                Quando passamos do modelo de geração centralizada de grande porte para o ambiente residencial e comercial de pequeno e médio porte, a engenharia foca na descentralização e no aproveitamento dos recursos locais. É aqui que os sistemas híbridos ganham protagonismo, revolucionando a forma como interagimos com a energia.
-            </p>
-
-            <!-- Tratamento de Imagem Otimizada -->
-            <div class="my-8 rounded-xl overflow-hidden border border-slate-200 bg-slate-50 aspect-video w-full max-w-3xl mx-auto shadow-sm">
-                <img 
-                    src="img/energia-hibrida-solar-eolica-residencial-comercial.webp" 
-                    alt="Cenário rural com uma casa e uma padaria usando painéis solares no telhado, e duas grandes turbinas eólicas ao fundo em um dia ensolarado, ilustrando a energia híbrida" 
-                    loading="lazy" 
-                    decoding="async"
-                    class="w-full h-full object-cover"
-                    width="800"
-                    height="450"
-                >
+            <div class="text-gray-700 leading-relaxed space-y-6">
+                <p>
+                    Quando passamos do modelo de geração centralizada de grande porte para o ambiente residencial e comercial de pequeno e médio porte, a engenharia foca na descentralização e no aproveitamento dos recursos locais. É aqui que os sistemas híbridos ganham protagonismo, revolucionando a forma como interagimos com a energia.
+                </p>
             </div>
 
-            <h3 class="text-xl font-semibold text-slate-900 pt-2">
+            <div class="my-8 flex flex-col items-center bg-gray-100 p-4 rounded-xl border border-gray-200">
+                <img 
+                    src="imagens/energia-hibrida-solar-eolica-residencial-comercial.webp" 
+                    alt="Cenário rural com uma casa e uma padaria usando painéis solares no telhado, e duas grandes turbinas eólicas ao fundo em um dia ensolarado, ilustrando a energia híbrida" 
+                    loading="lazy"
+                    width="1000"
+                    height="500"
+                    class="rounded-lg max-w-full h-auto shadow-sm"
+                >
+                <span class="text-xs text-gray-500 mt-2 text-center">Modelo funcional residencial/comercial aplicando complementaridade solar e eólica.</span>
+            </div>
+
+            <h3 class="text-xl md:text-2xl font-semibold text-gray-950 mt-8 mb-4">
                 4.1 Como Funciona um Sistema de Energia Híbrida Residencial?
             </h3>
-
-            <p class="text-slate-600">
-                Para quem busca a máxima eficiência, entender <strong>como funciona um sistema de energia híbrida residencial</strong> é o primeiro passo para o sucesso do projeto. Em termos técnicos, um sistema híbrido é aquele que combina duas ou mais fontes de energia diferentes (geralmente associando fontes renováveis variáveis com uma fonte de backup ou com a própria rede elétrica convencional) atuando em harmonia através de um gerenciamento inteligente.
-            </p>
-
-            <!-- Diagrama / Bloco Técnico Amigável -->
-            <div class="bg-slate-900 text-cyan-400 p-6 rounded-xl font-mono text-xs md:text-sm overflow-x-auto shadow-inner my-6">
-                <pre class="leading-relaxed">
-[ Painéis Solares ] ───►  [ Inversor ]  ◄─── [ Aerogerador ]  
-                          Híbrido  
-                            │    ▲  
-                           ▼    │  
-              [ Banco de Baterias Estacionárias ]  
-                            │  
-                           ▼  
-              [ Cargas da Residência ]  
-                </pre>
+            <div class="text-gray-700 leading-relaxed space-y-6">
+                <p>
+                    Para quem busca a máxima eficiência, entender como funciona um sistema de energia híbrida residencial é o primeiro passo para o sucesso do projeto. Em termos técnicos, um sistema híbrido é aquele que combina duas ou mais fontes de energia diferentes (geralmente associando fontes renováveis variáveis com uma fonte de backup ou com a própria rede elétrica convencional) atuando em harmonia através de um gerenciamento inteligente.
+                </p>
             </div>
 
-            <p class="text-slate-600">
-                O coração desse sistema é o <strong>Inversor Híbrido</strong>. Este equipamento sofisticado atua como o cérebro da instalação, monitorando em tempo real a produção de energia das fontes renováveis, o estado de carga do banco de baterias, a demanda de consumo da casa e a disponibilidade da rede elétrica da concessionária. A mágica do sistema híbrido reside na sua flexibilidade operacional:
-            </p>
-
-            <ol class="list-decimal list-inside space-y-2 pl-4 text-slate-600">
-                <li><strong>Prioridade de Autoconsumo:</strong> Durante o dia, o inversor direciona a energia gerada pelas fontes renováveis locais para abastecer diretamente os eletrodomésticos da residência.</li>
-                <li><strong>Armazenamento Inteligente:</strong> Se a produção local for maior do que o consumo da casa naquele instante, o excedente não é desperdiçado; o inversor o direciona para carregar o banco de baterias.</li>
-                <li><strong>Suporte da Rede ou Baterias:</strong> Durante a noite ou em momentos de calmaria climática, o sistema utiliza a energia previamente armazenada nas baterias. Caso as baterias atinjam o limite seguro de descarga, o inversor aciona suavemente a entrada da rede elétrica convencional ou de um gerador a combustão de backup, garantindo que a residência nunca fique no escuro.</li>
-            </ol>
-
-            <h3 class="text-xl font-semibold text-slate-900 pt-2">
-                4.2 Geração de Energia Fotovoltaica Residencial: O Pilar Solar
-            </h3>
-
-            <p class="text-slate-600">
-                A tecnologia solar é, sem dúvida, o componente mais popular e acessível nos sistemas híbridos modernos. A <strong>geração de energia fotovoltaica residencial</strong> baseia-se na conversão direta da luz do sol em eletricidade por meio de células fotovoltaicas, tipicamente fabricadas de silício cristalino purificado.
-            </p>
-
-            <p class="text-slate-600">
-                Quando os fótons da radiação solar incidem sobre as células do painel, eles transferem energia para os elétrons do semicondutor, gerando um fluxo de corrente contínua (CC). O inversor do sistema híbrido assume então o papel de converter essa corrente contínua em corrente alternada (CA), nas tensões padronizadas de uso residencial (127V ou 220V), sincronizando-a com a frequência da rede.
-            </p>
-
-            <p class="text-slate-600">
-                A grande vantagem técnica da energia fotovoltaica residencial é a sua modularidade e baixa manutenção. Como os painéis não possuem partes móveis, o seu desgaste mecânico é nulo, exigindo apenas limpezas periódicas para remoção de poeira e sujidades que possam bloquear a passagem da luz. Sob a ótica do custo-benefício, a tecnologia solar fotovoltaica apresenta uma das curvas de depreciação e redução de preços mais acentuadas da indústria de energia, tornando-se o investimento base para qualquer arquitetura híbrida residencial no Brasil.
-            </p>
-
-            <h3 class="text-xl font-semibold text-slate-900 pt-2">
-                4.3 Energia Eólica de Pequena Escala ou Micro Eólica Residencial: O Complemento Noturno
-            </h3>
-
-            <p class="text-slate-600">
-                Enquanto a energia solar apresenta uma limitação óbvia — a ausência de geração durante o período noturno —, a <strong>energia eólica de pequena escala ou micro eólica residencial</strong> surge como o complemento perfeito em sistemas híbridos de alta performance. Esta tecnologia consiste na utilização de pequenos aerogeradores (com capacidades que variam tipicamente de algumas centenas de watts até 10 kW) projetados para operar de forma descentralizada em ambientes urbanos, suburbanos ou rurais.
-            </p>
-
-            <p class="text-slate-600">
-                Diferente das torres gigantescas dos parques eólicos comerciais, os micro aerogeradores residenciais utilizam rotores menores e podem ser instalados em torres mais baixas ou até mesmo fixados diretamente em estruturas reforçadas de telhados. O princípio operacional baseia-se na conversão da energia cinética dos ventos em energia mecânica rotacional através das pás, a qual aciona um gerador de ímãs permanentes de alta eficiência para produzir eletricidade.
-            </p>
-
-            <h4 class="text-lg font-semibold text-slate-900">
-                4.3.1 Aerogeradores de Eixo Horizontal vs. Eixo Vertical
-            </h4>
-
-            <p class="text-slate-600">
-                Na escolha do equipamento para o seu sistema híbrido, é fundamental compreender as duas principais geometrias de micro aerogeradores disponíveis no mercado:
-            </p>
-
-            <ul class="list-disc list-inside space-y-2 pl-4 text-slate-600">
-                <li><strong>Aerogeradores de Eixo Horizontal (HAWT):</strong> São os mais comuns e assemelham-se aos moinhos tradicionais. Possuem uma eficiência aerodinâmica superior, conseguindo extrair mais energia mecânica de ventos constantes. No entanto, exigem um mecanismo de direcionamento (cauda ou leme) para alinhar o rotor perpendicularmente ao vento e são mais sensíveis a turbulências urbanas.</li>
-                <li><strong>Aerogeradores de Eixo Vertical (VAWT):</strong> Possuem designs modernos (como os modelos Savonius ou Darrieus) onde as pás giram em torno de um eixo vertical. A grande vantagem técnica desse modelo é a sua natureza omnidirecional: ele consegue captar ventos soprando de qualquer direção sem a necessidade de sistemas de guinada. São ideais para o ambiente urbano e de pequenas propriedades, pois lidam muito bem com ventos turbulentos e rajadas inconstantes, além de operarem de forma extremamente silenciosa.</li>
-            </ul>
-
-            <p class="text-slate-600">
-                A integração da micro eólica ao lado da geração solar fotovoltaica residencial cria uma sinergia climática fantástica: frequentemente, os dias nublados ou períodos de tempestades e noites são acompanhados por ventos mais intensos, permitindo que o sistema híbrido mantenha uma geração contínua e reduza drasticamente a dependência do uso profundo do banco de baterias.
-            </p>
-
-            <!-- SEÇÃO 5 -->
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 pt-6 border-t border-slate-100">
-                5. O Bloco de Armazenamento e Baterias: A Chave da Autonomia Energética
-            </h2>
-
-            <p class="text-slate-600">
-                Se a geração de energia renovável descentralizada é o motor do sistema híbrido, o armazenamento é o tanque de combustível que garante a resiliência operacional. Sem um método eficaz de estocagem, toda a energia excedente produzida nos momentos de pico solar ou eólico seria desperdiçada ou injetada na rede da concessionária por valores de crédito nem sempre vantajosos.
-            </p>
-
-            <!-- Tratamento de Imagem Otimizada -->
-            <div class="my-8 rounded-xl overflow-hidden border border-slate-200 bg-slate-50 aspect-video w-full max-w-3xl mx-auto shadow-sm">
-                <img 
-                    src="img/sistema-de-energia-hibrida-residencial-solar.webp" 
-                    alt="Sistema de energia híbrida residencial instalado no solo com arranjo de seis painéis solares fotovoltaicos ao lado de um armário técnico verde de proteção e armazenamento, integrado a uma casa de campo durante o pôr do sol" 
-                    loading="lazy" 
-                    decoding="async"
-                    class="w-full h-full object-cover"
-                    width="800"
-                    height="450"
-                >
+            <div class="my-8 bg-brand-panelDark text-white p-6 rounded-xl font-mono text-sm shadow-inner overflow-x-auto border border-gray-800">
+                <div class="min-w-[600px] space-y-4 text-center">
+                    <div class="flex justify-around items-center">
+                        <div class="bg-brand-cyan text-brand-bgDark font-bold px-4 py-2 rounded shadow">[ Painéis Solares ]</div>
+                        <div class="text-brand-cyan text-xl">───►</div>
+                        <div class="bg-gray-800 border-2 border-brand-cyan font-bold px-6 py-4 rounded shadow-lg">
+                            [ Inversor Híbrido ]<br>
+                            <span class="text-xs text-brand-cyan font-normal">Cérebro do Sistema</span>
+                        </div>
+                        <div class="text-brand-cyan text-xl">◄───</div>
+                        <div class="bg-teal-600 font-bold px-4 py-2 rounded shadow">[ Aerogerador ]</div>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="text-brand-cyan text-xl font-bold">▲ ▼</div>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="bg-emerald-700 font-bold px-6 py-2 rounded shadow">[ Banco de Baterias Estacionárias (LiFePO4) ]</div>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="text-brand-cyan text-xl font-bold">▼</div>
+                    </div>
+                    <div class="flex justify-center">
+                        <div class="bg-gray-700 font-bold px-8 py-2 rounded shadow-sm">[ Cargas da Residência ]</div>
+                    </div>
+                </div>
             </div>
 
-            <h3 class="text-xl font-semibold text-slate-900 pt-2">
-                5.1 O Papel Crítico do Banco de Baterias Estacionárias
-            </h3>
-
-            <p class="text-slate-600">
-                O <strong>banco de baterias estacionárias</strong> é o agrupamento de células eletroquímicas interconectadas em série e/ou paralelo para atingir a tensão e a capacidade de armazenamento em ampères-hora Ah ou quilowatts-hora kWh exigidas pelo projeto. Como destacado anteriormente, as baterias estacionárias diferem radicalmente das baterias de partida automotivas: elas são projetadas com placas internas mais espessas e formulações químicas robustas para suportar ciclos repetitivos de descarga profunda sem sofrer degradação acelerada de sua capacidade útil.
-            </p>
-
-            <p class="text-slate-600">
-                No contexto de sistemas híbridos residenciais e comerciais, o banco de baterias atua como um amortecedor de carga, estabilizando as flutuações rápidas de voltagem causadas pela passagem de nuvens sobre os painéis solares ou por variações bruscas na velocidade do vento, entregando uma energia pura e contínua para os inversores.
-            </p>
-
-            <h3 class="text-xl font-semibold text-slate-900 pt-2">
-                5.2 O Ecossistema do Armazenamento de Energia Solar Residencial
-            </h3>
-
-            <p class="text-slate-600">
-                Implementar um projeto de <strong>armazenamento de energia solar residencial</strong> exige o entendimento das perdas envolvidas e da eficiência global do sistema (<em>Round-Trip Efficiency</em>), que mede a porcentagem de energia que pode ser recuperada do banco de baterias em relação à energia que foi injetada durante a recarga.
-            </p>
-
-            <p class="text-slate-600">
-                O gerenciamento térmico do local de instalação do banco de baterias é um fator crítico muitas vezes negligenciado. Reações eletroquímicas são altamente sensíveis à temperatura ambiente: calor excessivo acelera a degradação interna e reduz drasticamente a vida útil das células, enquanto o frio extremo reduz temporariamente a capacidade de entrega de corrente. Por isso, reviews especializados sempre recomendam a instalação das baterias estacionárias em locais ventilados, protegidos da incidência direta do sol e com controle de umidade.
-            </p>
-
-            <h3 class="text-xl font-semibold text-slate-900 pt-2">
-                5.3 O Embate Tecnológico: Baterias LiFePO4 vs. Chumbo-Ácido
-            </h3>
-
-            <p class="text-slate-600">
-                Na hora de abrir o bolso e investir no sistema híbrido, o consumidor se depara com a principal decisão de engenharia do projeto: escolher entre a tradição do chumbo-ácido ou a alta tecnologia do lítio. Vamos analisar detalhadamente o embate <strong>baterias LiFePO4 vs chumbo-ácido</strong> sob uma ótica estritamente técnica.
-            </p>
-
-            <h4 class="text-lg font-semibold text-slate-900">
-                5.3.1 Baterias de Chumbo-Ácido (Ventiladas e VRLA Gel/AGM)
-            </h4>
-
-            <p class="text-slate-600">
-                As baterias de chumbo-ácido utilizam uma tecnologia centenária baseada em placas de chumbo imersas em uma solução de ácido sulfúrico. Suas variantes seladas VRLA (<em>Valve Regulated Lead Acid</em>) do tipo Gel ou AGM (<em>Absorbent Glass Mat</em>) eliminaram a necessidade de manutenção frequente de reposição de água destilada, tornando-as populares em sistemas off-grid tradicionais.
-            </p>
-
-            <ul class="list-disc list-inside space-y-2 pl-4 text-slate-600">
-                <li><strong>Vantagens:</strong> Baixíssimo custo de aquisição inicial (preço nominal por bloco) e facilidade de reciclagem industrial consolidada no Brasil.</li>
-                <li><strong>Desvantagens Técnicas:</strong> Limitação severa na Profundidade de Descarga (DoD). Para que uma bateria de chumbo-ácido atinja uma vida útil aceitável, ela não deve ser descarregada além de 50% de sua capacidade nominal. Se você descarregá-la rotineiramente a 80% ou 100%, a bateria sofrerá sulfatação prematura das placas e falhará em poucos meses. Além disso, são extremamente pesadas, volumosas e perdem eficiência energética em recargas rápidas devido ao efeito Joule (aquecimento).</li>
-            </ul>
-
-            <h4 class="text-lg font-semibold text-slate-900">
-                5.3.2 Baterias de Ferro-Fosfato de Lítio (LiFePO4)
-            </h4>
-
-            <p class="text-slate-600">
-                As baterias de Lítio revolucionaram a eletrônica portátil e os veículos elétricos, e a sua química específica de Ferro-Fosfato de Lítio (LiFePO4) consolidou-se como o padrão absoluto para sistemas estacionários residenciais e comerciais devido à sua altíssima segurança estabilidade térmica, eliminando completamente os riscos de incêndios associados às antigas baterias de lítio-íon de óxido de cobalto.
-            </p>
-
-            <ul class="list-disc list-inside space-y-2 pl-4 text-slate-600">
-                <li><strong>Vantagens Técnicas:</strong> Suportam profundidades de descarga brutais de 80% a 90% (e até 100% em emergências) sem comprometer a sua estrutura interna. Enquanto uma excelente bateria de chumbo-ácido entrega cerca de 500 a 800 ciclos de vida a 50% de descarga, a bateria de LiFePO4 supera facilmente a impressionante marca de <strong>6.000 ciclos a 80% DoD</strong>. Isso significa mais de 15 anos de operação diária ininterrupta. Adicionalmente, possuem uma densidade energética incomparável (ocupam 1/3 do espaço e peso do chumbo para a mesma energia útil), suportam correntes de carga e descarga ultra rápidas e possuem eficiência global superior a 95%.</li>
-                <li><strong>Desvantagens:</strong> Exigem obrigatoriamente um sistema eletrônico de gerenciamento integrado, o BMS (<em>Battery Management System</em>), para controlar as tensões e temperaturas de cada célula individualmente, além de apresentarem um custo nominal de aquisição inicial significativamente mais elevado.</li>
-            </ul>
-
-            <h3 class="text-xl font-semibold text-slate-900 pt-2">
-                5.4 Analisando o Custo-Benefício de Baterias Estacionárias: O Custo por Ciclo
-            </h3>
-
-            <p class="text-slate-600">
-                Para tomar uma decisão financeiramente inteligente, o investidor não deve olhar apenas para o "preço de etiqueta" da bateria na loja, mas sim realizar o cálculo do <strong>custo-benefício de baterias estacionárias</strong> com base no conceito técnico de <strong>Custo por Quilowatt-hora por Ciclo</strong> ($Custo/kWh/Ciclo$).
-            </p>
-
-            <p class="text-slate-600">
-                Vamos a um exemplo prático de review de mercado: imagine que um banco de baterias de chumbo-ácido custe R$ 5.000,00 e entregue 500 ciclos úteis de energia se descarregado a 50%. O custo real por ciclo desse banco de baterias é de R$ 10,00.
-            </p>
-
-            <p class="text-slate-600">
-                Por outro lado, um banco de baterias estacionárias modernas de lítio LiFePO4 com a mesma capacidade útil de energia custa R$ 15.000,00 (o triplo do preço inicial). No entanto, este banco de lítio entrega 6.000 ciclos de vida operacionais a 80% de descarga. Dividindo o investimento inicial pelo número de ciclos reais, o custo por ciclo do sistema de lítio cai para apenas R$ 2,50.
-            </p>
-
-            <p class="text-slate-600 font-medium text-slate-900">
-                Conclusão técnica incontestável: no longo prazo, a bateria de lítio LiFePO4 é quatro vezes mais barata, oferecendo o melhor custo-benefício de baterias estacionárias para sistemas híbridos residenciais de uso contínuo, eliminando a dor de cabeça de trocar o banco de chumbo a cada dois ou três anos.
-            </p>
-
-            <!-- SEÇÃO 6 -->
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 pt-6 border-t border-slate-100">
-                6. O Bloco de Vetores de Vanguarda e Análise Tarifária: Inteligência Financeira
-            </h2>
-
-            <p class="text-slate-600">
-                A viabilidade econômica e o dimensionamento correto de fontes de energia renovável para sistemas híbridos estão intimamente atrelados às regras tarifárias impostas pelas agências reguladoras e às novas tecnologias que despontam como vetores de armazenamento de longo prazo.
-            </p>
-
-            <!-- Tratamento de Imagem Otimizada -->
-            <div class="my-8 rounded-xl overflow-hidden border border-slate-200 bg-slate-50 aspect-video w-full max-w-3xl mx-auto shadow-sm">
-                <img 
-                    src="img/sistema-de-bandeiras-tarifarias-aneel-energia.webp" 
-                    alt="Infográfico em formato de lâmpada dividida nas cores verde, amarela e vermelha, explicando o funcionamento do sistema de bandeiras tarifárias da ANEEL de acordo com as condições de custo e geração de energia na matriz elétrica" 
-                    loading="lazy" 
-                    decoding="async"
-                    class="w-full h-full object-cover"
-                    width="800"
-                    height="450"
-                >
+            <div class="text-gray-700 leading-relaxed space-y-6">
+                <p>
+                    O coração desse sistema é o <strong>Inversor Híbrido</strong>. Este equipamento sofisticado atua como o cérebro da instalação, monitorando em tempo real a produção de energia das fontes renováveis, o estado de carga do banco de baterias, a demanda de consumo da casa e a disponibilidade da rede elétrica da concessionária.
+                </p>
+                <p>
+                    A mágica do sistema híbrido reside na sua flexibilidade operacional:
+                </p>
+                <ul class="list-disc pl-6 space-y-3">
+                    <li><strong>Prioridade de Autoconsumo:</strong> Durante o dia, o inversor direciona a energia gerada pelas fontes renováveis locais para abastecer diretamente os eletrodomésticos da residência.</li>
+                    <li><strong>Armazenamento Inteligente:</strong> Se a produção local for maior do que o consumo da casa naquele instante, o excedente não é desperdiçado; o inversor o direciona para carregar o banco de baterias.</li>
+                    <li><strong>Suporte da Rede ou Baterias:</strong> Durante a noite ou em momentos de calmaria climática, o sistema utiliza a energia previamente armazenada nas baterias. Caso as baterias atinjam o limite seguro de descarga, o inversor aciona suavemente a entrada da rede elétrica convencional ou de um gerador a combustão de backup, garantindo que a residência nunca fique no escuro.</li>
+                </ul>
             </div>
 
-            <h3 class="text-xl font-semibold text-slate-900 pt-2">
-                6.1 Sistema de Bandeiras Tarifárias e o Custo-Benefício da Autonomia
-            </h3>
-
-            <p class="text-slate-600">
-                No cenário brasileiro, o consumidor residencial e comercial convive mensalmente com as oscilações provocadas pelo <strong>sistema de bandeiras tarifárias custo benefício</strong>. Implementado pela Agência Nacional de Energia Elétrica (ANEEL), este mecanismo funciona como uma sinalização visual diretamente na conta de luz para repassar aos consumidores os custos extraordinários da geração de energia no país.
-            </p>
-
-            <p class="text-slate-600">
-                Quando o regime de chuvas é abundante, as grandes usinas hidrelétricas operam em níveis ideais e a eletricidade é gerada a custos operacionais baixos (Bandeira Verde). No entanto, em períodos de estiagem prolongada e secas severas nas principais bacias hidrográficas, o Operador Nacional do Sistema Elétrico (ONS) é obrigado a acionar em massa as usinas termelétricas convencionais de backup (movidas a óleo diesel e gás natural). Como o custo por megawatt-hora MWh dessas térmicas fósseis é astronomicamente elevado, a tarifa sobre o consumo de energia sofre acréscimos automáticos através das bandeiras Amarela e Vermelha (Patamares 1 e 2).
-            </p>
-
-            <p class="text-slate-600">
-                É exatamente nesse cenário de instabilidade que o custo-benefício de um sistema híbrido residencial se eleva ao máximo. Ao contar com geração solar fotovoltaica residencial, micro eólica e um banco de baterias estacionárias inteligente, o usuário ganha a capacidade de realizar a <strong>Arbitragem de Carga</strong>. O inversor híbrido pode ser programado para carregar as baterias utilizando a rede nos horários em que a tarifa é mais barata ou priorizar a energia solar diurna, e descarregar o banco de baterias para abastecer a residência justamente nos horários em que as tarifas da distribuidora estão inflacionadas pelas bandeiras vermelhas ou pela tarifa de ponta (horário de pico), gerando uma economia financeira brutal no fluxo de caixa mensal.
-            </p>
-
-            <h3 class="text-xl font-semibold text-slate-900 pt-2">
-                6.2 Hidrogênio Verde como Vetor Energético: O Futuro do Armazenamento de Longo Prazo
-            </h3>
-
-            <p class="text-slate-600">
-                Se as baterias estacionárias de lítio representam a solução ideal para o armazenamento de curto prazo (ciclos diários de carga e descarga), a indústria global de vanguarda foca no <strong>hidrogênio verde como vetor energético</strong> para solucionar o desafio do armazenamento sazonal de longa duração e da descarbonização de setores pesados.
-            </p>
-
-            <p class="text-slate-600">
-                O hidrogênio H2 é o elemento químico mais abundante do universo, mas não é encontrado em formato gasoso puro de forma livre na Terra, exigindo o consumo de energia para ser isolado de moléculas como a da água H2. Dependendo da fonte de energia utilizada nesse processo, o hidrogênio recebe uma classificação por cores: o Hidrogênio Cinza provém da reforma a vapor do gás natural fóssil com altas emissões de CO2; o Hidrogênio Azul utiliza a mesma base fóssil, mas integra sistemas de captura e armazenamento geológico de carbono (CCUS).
-            </p>
-
-            <p class="text-slate-600">
-                Por sua vez, o Hidrogênio Verde (H2V) é obtido através do processo físico-químico de <strong>Eletrólise da Água</strong>, utilizando equipamentos chamados eletrolisadores para quebrar as ligações de hidrogênio e oxigênio. Para receber o selo verde de sustentabilidade, toda a eletricidade que alimenta esses eletrolisadores deve provir obrigatoriamente de fontes renováveis puras, como usinas solares e parques eólicos de larga escala.
-            </p>
-
-            <!-- Diagrama / Bloco Técnico Amigável -->
-            <div class="bg-slate-900 text-cyan-400 p-6 rounded-xl font-mono text-xs md:text-sm overflow-x-auto shadow-inner my-6">
-                <pre class="leading-relaxed">
-[ Eletricidade Renovável ] ──► [ Eletrolisador ] ──► [ Hidrogênio Verde ] ──► Armazenamento em Alta Pressão  
-( Solar ou Eólica )                 ▲  
-                                    │  
-                                [ Água ]  
-                </pre>
-            </div>
-
-            <p class="text-slate-600">
-                O papel do hidrogênio verde como vetor energético é revolucionário: ele funciona como uma forma de "combustível químico renovável". O excedente massivo de geração de energia solar e eólica produzido em determinadas épocas do ano pode ser convertido em hidrogênio verde gasoso, comprimido a altas pressões e estocado em tanques ou cavernas geológicas por meses sem sofrer perdas por autodescarga (um problema comum em baterias ao longo do tempo). Quando o sistema elétrico necessita de energia, esse hidrogênio pode ser queimado em turbinas limpas ou convertido diretamente de volta em eletricidade e água através de <strong>Células a Combustível</strong> (<em>Fuel Cells</em>), fechando um ciclo macro-energético perfeito e com emissão zero de carbono.
-            </p>
-
-            <!-- SEÇÃO 7 (Tabela Completa e Responsiva) -->
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 pt-6 border-t border-slate-100">
-                7. Análise Técnica e Comparativo Avançado de Fontes e Tecnologias
-            </h2>
-
-            <p class="text-slate-600">
-                Para auxiliar proprietários residenciais, engenheiros projetistas e pequenos empresários na tomada de decisão e especificação de componentes para uma infraestrutura híbrida resiliente, elaboramos uma matriz comparativa detalhada reunindo os dados técnicos essenciais das tecnologias discutidas neste guia:
-            </p>
-
-            <div class="overflow-x-auto my-6 rounded-xl border border-slate-200 shadow-sm">
-                <table class="w-full text-left border-collapse bg-white text-sm">
-                    <thead>
-                        <tr class="bg-slate-50 border-b border-slate-200 text-slate-700 font-bold">
-                            <th class="p-4 whitespace-nowrap">Fonte ou Tecnologia</th>
-                            <th class="p-4 whitespace-nowrap">Tipo de Recurso</th>
-                            <th class="p-4 whitespace-nowrap">Eficiência Global Média</th>
-                            <th class="p-4 whitespace-nowrap">Vida Útil Estimada</th>
-                            <th class="p-4">Principais Vantagens Técnicas</th>
-                            <th class="p-4">Principais Desafios de Projeto</th>
-                            <th class="p-4">Aplicação Recomendada</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-slate-200 text-slate-600">
-                        <tr class="hover:bg-slate-50">
-                            <td class="p-4 font-semibold text-slate-900 whitespace-nowrap">Geração Solar Fotovoltaica</td>
-                            <td class="p-4">Renovável Variável</td>
-                            <td class="p-4">18% a 22% (Eficiência do Painel)</td>
-                            <td class="p-4 whitespace-nowrap">25 a 30 anos (Módulos)</td>
-                            <td class="p-4">Alta modularidade, sem partes móveis, baixíssima manutenção e excelente previsibilidade diurna.</td>
-                            <td class="p-4">Geração estritamente diurna, dependência de radiação e exigência de área de telhado.</td>
-                            <td class="p-4">Base de captação para sistemas híbridos residenciais e comerciais urbanos.</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50">
-                            <td class="p-4 font-semibold text-slate-900 whitespace-nowrap">Microeólica Residencial</td>
-                            <td class="p-4">Renovável Variável</td>
-                            <td class="p-4">30% a 45% (Limite de Betz)</td>
-                            <td class="p-4 whitespace-nowrap">15 a 20 anos (Aerogerador)</td>
-                            <td class="p-4">Geração complementar noturna, alta densidade de potência por área de rotor.</td>
-                            <td class="p-4">Dependência de regimes de vento constantes, sensibilidade a turbulências e risco à avifauna local.</td>
-                            <td class="p-4">Propriedades rurais, regiões litorâneas e suporte noturno a sistemas híbridos solares.</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50">
-                            <td class="p-4 font-semibold text-slate-900 whitespace-nowrap">Baterias de Chumbo-Ácido VRL</td>
-                            <td class="p-4">Armazenamento Eletroquímico</td>
-                            <td class="p-4">75% a 85%</td>
-                            <td class="p-4 whitespace-nowrap">3 a 5 anos (300 a 500 ciclos a 50% DoD)</td>
-                            <td class="p-4">Baixo custo nominal inicial, tecnologia simples e reciclagem amplamente consolidada.</td>
-                            <td class="p-4">Peso elevado, baixa densidade energética, limitação de descarga severa a 50%.</td>
-                            <td class="p-4">Sistemas off-grid de baixo orçamento ou backup residencial de uso esporádico.</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50">
-                            <td class="p-4 font-semibold text-slate-900 whitespace-nowrap">Baterias de Lítio LiFePO4</td>
-                            <td class="p-4">Armazenamento Eletroquímico</td>
-                            <td class="p-4">95% a 98%</td>
-                            <td class="p-4 whitespace-nowrap">15 a 20 anos (Acima de 6.000 ciclos a 80% DoD)</td>
-                            <td class="p-4">Densidade energética extrema, suporta descargas profundas de 80%+, carga rápida e alta segurança.</td>
-                            <td class="p-4">Custo de aquisição inicial elevado e dependência obrigatória de placa BMS.</td>
-                            <td class="p-4">Padrão ouro para armazenamento de energia solar residencial e arbitragem tarifária comercial.</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50">
-                            <td class="p-4 font-semibold text-slate-900 whitespace-nowrap">Hidrogênio Verde (H2V)</td>
-                            <td class="p-4">Vetor Energético de Longo Prazo</td>
-                            <td class="p-4">40% a 50% (Ciclo Completo com Célula)</td>
-                            <td class="p-4 whitespace-nowrap">Variável (Depende do Eletrolisador)</td>
-                            <td class="p-4">Densidade de energia por massa absurda, armazenamento por meses sem perdas, emissão zero de $CO_2$.</td>
-                            <td class="p-4">Custo tecnológico elevado, complexidade de compressão a alta pressão e armazenamento criogênico.</td>
-                            <td class="p-4">Armazenamento sazonal de grande escala, frotas pesadas de transporte e indústrias de base.</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50">
-                            <td class="p-4 font-semibold text-slate-900 whitespace-nowrap">Usinas Hidrelétricas</td>
-                            <td class="p-4">Renovável Despachável</td>
-                            <td class="p-4">85% a 95% (Alta Eficiência Hidráulica)</td>
-                            <td class="p-4 whitespace-nowrap">Acima de 50 anos</td>
-                            <td class="p-4">Fornecimento estável de base (SIN), custo de geração por MWh extremamente competitivo.</td>
-                            <td class="p-4">Sazonalidade hidrológica (secas) e grandes impactos ambientais/sociais no alagamento inicial.</td>
-                            <td class="p-4">Matriz centralizada nacional e suporte de carga pesada da rede.</td>
-                        </tr>
-                        <tr class="hover:bg-slate-50">
-                            <td class="p-4 font-semibold text-slate-900 whitespace-nowrap">Energia Nuclear</td>
-                            <td class="p-4">Não Renovável Conven.</td>
-                            <td class="p-4">33% a 37% (Térmica para Elétrica)</td>
-                            <td class="p-4 whitespace-nowrap">40 a 60 anos</td>
-                            <td class="p-4">Emissão zero de GEE, altíssima confiabilidade e estabilidade de base independente do clima.</td>
-                            <td class="p-4">Custo de construção bilionário, gerenciamento complexo de rejeitos radioativos de longa atividade.</td>
-                            <td class="p-4">Geração de base ininterrupta para grandes centros urbanos e segurança do grid.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- SEÇÃO 8 -->
-            <h2 class="text-2xl md:text-3xl font-bold text-slate-900 pt-6 border-t border-slate-100">
-                8. Conclusão: O Futuro Pertence à Descentralização e Resiliência Energética
-            </h2>
-
-            <p class="text-slate-600">
-                Ao final de um review técnico aprofundado sobre todo o ecossistema que move o setor elétrico, fica evidente que o antigo modelo de fornecimento de energia — puramente centralizado, unidirecional e totalmente dependente de combustíveis fósseis ou da sorte climática sobre grandes reservatórios hídricos — está cedendo espaço para uma realidade inevitável: a era da <strong>Geração Distribuída e dos Sistemas Híbridos Inteligentes</strong>.
-            </p>
-
-            <p class="text-slate-600">
-                Para o consumidor residencial, o pequeno comerciante e o produtor rural, a adoção de <strong>fontes de energia renovável para sistemas híbridos</strong> representa uma transformação de status: de um mero pagador de faturas passivo e exposto aos solavancos do sistema de bandeiras tarifárias para um agente ativo, um <em>prosumidor</em> capaz de gerar, gerenciar e armazenar a sua própria eletricidade limpa.
-            </p>
-
-            <!-- Bloco de CTA de Conversão de Alta Performance para Afiliados -->
-            <div class="my-10 p-6 md:p-8 bg-gradient-to-br from-cyan-50 via-white to-slate-50 rounded-2xl border border-cyan-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="space-y-2 text-center md:text-left">
-                    <h4 class="text-xl font-bold text-slate-900">Quer Montar Sua Autonomia Híbrida?</h4>
-                    <p class="text-sm text-slate-600 max-w-xl">
-                        A escolha dos inversores, painéis e baterias corretos dita o retorno do seu investimento. Acesse a lista de componentes recomendados diretamente no Mercado Livre com garantia de estoque e entrega rápida.
+            <div class="my-12 bg-gradient-to-br from-brand-bgDark to-brand-panelDark text-white p-8 rounded-2xl border border-gray-800 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="space-y-2 max-w-xl">
+                    <span class="text-xs font-bold uppercase tracking-widest text-brand-cyan">Recomendação do Engenheiro</span>
+                    <h4 class="text-xl md:text-2xl font-bold text-white">Pronto para montar o seu próprio Sistema Híbrido Isolado?</h4>
+                    <p class="text-gray-400 text-sm">
+                        Encontre inversores híbridos de onda senoidal pura, controladores de carga MPPT e baterias seladas com as melhores condições do mercado diretamente nos parceiros oficiais.
                     </p>
                 </div>
-                <a 
-                    href="https://www.mercadolivre.com.br" 
-                    target="_blank" 
-                    rel="noopener noreferrer nofollow" 
-                    aria-label="Ver Kit de Energia Híbrida e Baterias LiFePO4 no Mercado Livre" 
-                    class="w-full md:w-auto text-center inline-block bg-cyan-500 hover:bg-cyan-600 text-white font-bold px-8 py-4 rounded-xl shadow-md transition-all duration-200 hover:-translate-y-0.5"
-                >
-                    Ver Componentes no Mercado Livre →
-                </a>
+                <div class="w-full md:w-auto flex-shrink-0">
+                    <a 
+                        href="https://www.mercadolivre.com.br" 
+                        target="_blank" 
+                        rel="nofollow noopener" 
+                        aria-label="Ir para o Mercado Livre e conferir equipamentos de energia solar e híbrida" 
+                        class="w-full md:w-auto inline-block text-center bg-amber-500 hover:bg-amber-400 text-gray-950 font-bold px-8 py-4 rounded-xl transition-all shadow-md transform hover:-translate-y-0.5"
+                    >
+                        Ver Equipamentos no Mercado Livre
+                    </a>
+                </div>
             </div>
-
-            <p class="text-slate-600">
-                A engenharia moderna nos mostra que o sucesso não reside na busca por uma fonte de energia "perfeita", mas sim na harmonia da <strong>complementaridade</strong>. Associar a constância previsível da geração de energia fotovoltaica residencial com a força complementar da micro eólica, ancorando toda essa energia no desempenho extraordinário e duradouro de um banco de baterias estacionárias de lítio LiFePO4, é a fórmula definitiva para alcançar a máxima eficiência, robustez financeira e uma autonomia energética inabalável preparada para os desafios das próximas décadas.
-            </p>
 
         </article>
     </main>
 
-    <!-- Estrutura do Footer -->
     <footer>
         <div class="footer-grid">
             <div class="footer-brand">
                 <div class="footer-logo-container">
                     <img 
-                        src="imagens/logo transparente 1000px.webp" 
-                        alt="HybridEnergy Logo Rodapé" 
+                        src="imagens/logo transparente retangular.webp" 
+                        alt="HybridEnergy" 
                         class="footer-logo"
-                        width="180"
+                        width="405"
                         height="90"
                     >
                 </div>
-                <h3 class="footer-tagline">Independência Energética ao seu Alcance</h3>
-                <a href="#" class="social-pinterest-link" aria-label="Visite nosso Pinterest">
-                    <img 
-                        src="imagens/Pinterest ícone 512×512.webp" 
-                        alt="Ícone do Pinterest" 
-                        class="social-pinterest-img"
-                        width="44"
-                        height="44"
-                    >
-                </a>
+                <p class="footer-tagline">Soluções inteligentes em energia híbrida residencial.</p>
             </div>
 
-            <div class="footer-nav">
+            <div class="footer-links-container">
                 <h4 class="footer-title">Conheça Mais</h4>
                 <ul class="footer-links">
                     <li><a href="/politica-de-privacidade">Política de Privacidade</a></li>
@@ -1058,21 +676,22 @@
         </div>
     </footer>
 
-    <!-- Script de comportamento do menu hambúrguer -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const navList = document.getElementById('nav-list');
 
-            mobileMenuBtn.addEventListener('click', () => {
-                navList.classList.toggle('open');
-            });
+            if (mobileMenuBtn && navList) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    navList.classList.toggle('open');
+                });
 
-            document.addEventListener('click', (e) => {
-                if (!mobileMenuBtn.contains(e.target) && !navList.contains(e.target)) {
-                    navList.classList.remove('open');
-                }
-            });
+                document.addEventListener('click', (e) => {
+                    if (!mobileMenuBtn.contains(e.target) && !navList.contains(e.target)) {
+                        navList.classList.remove('open');
+                    }
+                });
+            }
         });
     </script>
 </body>
