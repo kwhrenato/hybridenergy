@@ -291,9 +291,9 @@
         <h3 class="text-xl font-bold text-gray-800 mt-8 mb-4">5.4 Analisando o Custo-Benefício de Baterias Estacionárias: O Custo por Ciclo</h3>
         <p class="mb-4">Para tomar uma decisão financeiramente inteligente, o investidor não deve olhar apenas para o "preço de etiqueta" da bateria na loja, mas sim realizar o cálculo do <strong>custo-benefício de baterias estacionárias</strong> com base no conceito técnico de <strong>Custo por Quilowatt-hora por Ciclo</strong> (Custo/kWh/Ciclo).</p>
         
-        <p class="mb-4 text-gray-700 p-4 bg-gray-100 border-l-4 border-[#00bcd4] rounded-r-lg">
-            <em>Exemplo Prático:</em> Imagine que um banco de baterias de chumbo-ácido custe R$ 5.000,00 e entregue 500 ciclos úteis de energia se descarregado a 50%. O custo real por ciclo desse banco de baterias é de R$ 10,00. Por outro lado, um banco de baterias estacionárias modernas de lítio LiFePO<sub>4</sub> com a mesma capacidade útil de energia custa R$ 15.000,00 (o triplo do preço inicial). No entanto, este banco de lítio entrega 6.000 ciclos de vida operacionais a 80% de descarga. Dividindo o investimento inicial pelo número de ciclos reais, o custo por ciclo do sistema de lítio cai para apenas <strong>R$ 2,50</strong>.
-        </p>
+        <p class="mb-4">Vamos a um exemplo prático de review de mercado: imagine que um banco de baterias de chumbo-ácido custe R$ 5.000,00 e entregue 500 ciclos úteis de energia se descarregado a 50%. O custo real por ciclo desse banco de baterias é de R$ 10,00.</p>
+
+        <p class="mb-4">Por outro lado, um banco de baterias estacionárias modernas de lítio LiFePO<sub>4</sub> com a mesma capacidade útil de energia custa R$ 15.000,00 (o triplo do preço inicial). No entanto, este banco de lítio entrega 6.000 ciclos de vida operacionais a 80% de descarga. Dividindo o investimento inicial pelo número de ciclos reais, o custo por ciclo do sistema de lítio cai para apenas <strong>R$ 2,50</strong>.</p>
 
         <p class="mb-8 font-bold text-[#005F73]">Conclusão técnica incontestável: no longo prazo, a bateria de lítio LiFePO<sub>4</sub> é quatro vezes mais barata, oferecendo o melhor custo-benefício de baterias estacionárias para sistemas híbridos residenciais de uso contínuo, eliminando a dor de cabeça de trocar o banco de chumbo a cada dois ou três anos.</p>
 
@@ -338,54 +338,78 @@
             <table class="min-w-full text-left text-sm text-gray-700 bg-white border-collapse">
                 <thead class="bg-[#005F73] text-white">
                     <tr>
-                        <th class="p-3 border border-gray-300 font-semibold">Fonte ou Tecnologia</th>
-                        <th class="p-3 border border-gray-300 font-semibold">Tipo de Recurso</th>
-                        <th class="p-3 border border-gray-300 font-semibold">Eficiência Global Média</th>
-                        <th class="p-3 border border-gray-300 font-semibold">Vida Útil Estimada</th>
-                        <th class="p-3 border border-gray-300 font-semibold">Principais Vantagens Técnicas</th>
-                        <th class="p-3 border border-gray-300 font-semibold">Aplicação Recomendada</th>
+                        <th class="p-3 border border-gray-300 font-semibold min-w-[160px]">Fonte ou Tecnologia</th>
+                        <th class="p-3 border border-gray-300 font-semibold min-w-[150px]">Tipo de Recurso</th>
+                        <th class="p-3 border border-gray-300 font-semibold min-w-[150px]">Eficiência Global Média</th>
+                        <th class="p-3 border border-gray-300 font-semibold min-w-[150px]">Vida Útil Estimada</th>
+                        <th class="p-3 border border-gray-300 font-semibold min-w-[220px]">Principais Vantagens Técnicas</th>
+                        <th class="p-3 border border-gray-300 font-semibold min-w-[220px]">Principais Desafios de Projeto</th>
+                        <th class="p-3 border border-gray-300 font-semibold min-w-[220px]">Aplicação Recomendada</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="hover:bg-gray-50">
                         <td class="p-3 border border-gray-300 font-bold">Geração Solar Fotovoltaica</td>
                         <td class="p-3 border border-gray-300">Renovável Variável</td>
-                        <td class="p-3 border border-gray-300">18% a 22% (Painel)</td>
+                        <td class="p-3 border border-gray-300">18% a 22% (Eficiência do Painel)</td>
                         <td class="p-3 border border-gray-300">25 a 30 anos (Módulos)</td>
-                        <td class="p-3 border border-gray-300">Alta modularidade, sem partes móveis, baixíssima manutenção.</td>
-                        <td class="p-3 border border-gray-300">Base de captação para sistemas híbridos residenciais.</td>
+                        <td class="p-3 border border-gray-300">Alta modularidade, sem partes móveis, baixíssima manutenção e excelente previsibilidade diurna.</td>
+                        <td class="p-3 border border-gray-300">Geração estritamente diurna, dependência de radiação e exigência de área de telhado.</td>
+                        <td class="p-3 border border-gray-300">Base de captação para sistemas híbridos residenciais e comerciais urbanos.</td>
                     </tr>
                     <tr class="bg-gray-50 hover:bg-gray-100">
                         <td class="p-3 border border-gray-300 font-bold">Microeólica Residencial</td>
                         <td class="p-3 border border-gray-300">Renovável Variável</td>
                         <td class="p-3 border border-gray-300">30% a 45% (Limite de Betz)</td>
                         <td class="p-3 border border-gray-300">15 a 20 anos (Aerogerador)</td>
-                        <td class="p-3 border border-gray-300">Geração complementar noturna, alta densidade por área.</td>
-                        <td class="p-3 border border-gray-300">Propriedades rurais, regiões litorâneas e suporte noturno.</td>
+                        <td class="p-3 border border-gray-300">Geração complementar noturna, alta densidade de potência por área de rotor.</td>
+                        <td class="p-3 border border-gray-300">Dependência de regimes de vento constantes, sensibilidade a turbulências e risco à avifauna local.</td>
+                        <td class="p-3 border border-gray-300">Propriedades rurais, regiões litorâneas e suporte noturno a sistemas híbridos solares.</td>
                     </tr>
                     <tr class="hover:bg-gray-50">
-                        <td class="p-3 border border-gray-300 font-bold">Baterias Chumbo-Ácido VRLA</td>
+                        <td class="p-3 border border-gray-300 font-bold">Baterias de Chumbo-Ácido VRLA</td>
                         <td class="p-3 border border-gray-300">Armazenamento Eletroquímico</td>
                         <td class="p-3 border border-gray-300">75% a 85%</td>
-                        <td class="p-3 border border-gray-300">3 a 5 anos (500 ciclos a 50% DoD)</td>
-                        <td class="p-3 border border-gray-300">Baixo custo inicial, tecnologia simples, reciclagem consolidada.</td>
-                        <td class="p-3 border border-gray-300">Sistemas off-grid de baixo orçamento ou backup esporádico.</td>
+                        <td class="p-3 border border-gray-300">3 a 5 anos (300 a 500 ciclos a 50% DoD)</td>
+                        <td class="p-3 border border-gray-300">Baixo custo nominal inicial, tecnologia simples e reciclagem amplamente consolidada.</td>
+                        <td class="p-3 border border-gray-300">Peso elevado, baixa densidade energética, limitação de descarga severa a 50%.</td>
+                        <td class="p-3 border border-gray-300">Sistemas off-grid de baixo orçamento ou backup residencial de uso esporádico.</td>
                     </tr>
                     <tr class="bg-gray-50 hover:bg-gray-100">
-                        <td class="p-3 border border-gray-300 font-bold">Baterias LiFePO<sub>4</sub></td>
+                        <td class="p-3 border border-gray-300 font-bold">Baterias de Lítio LiFePO<sub>4</sub></td>
                         <td class="p-3 border border-gray-300">Armazenamento Eletroquímico</td>
                         <td class="p-3 border border-gray-300">95% a 98%</td>
-                        <td class="p-3 border border-gray-300">15 a 20 anos (+6.000 ciclos a 80% DoD)</td>
-                        <td class="p-3 border border-gray-300">Densidade extrema, descargas de 80%+, carga rápida.</td>
-                        <td class="p-3 border border-gray-300">Padrão ouro para armazenamento residencial e arbitragem.</td>
+                        <td class="p-3 border border-gray-300">15 a 20 anos (Acima de 6.000 ciclos a 80% DoD)</td>
+                        <td class="p-3 border border-gray-300">Densidade energética extrema, suporta descargas profundas de 80%+, carga rápida e alta segurança.</td>
+                        <td class="p-3 border border-gray-300">Custo de aquisição inicial elevado e dependência obrigatória de placa BMS.</td>
+                        <td class="p-3 border border-gray-300">Padrão ouro para armazenamento de energia solar residencial e arbitragem tarifária comercial.</td>
                     </tr>
                     <tr class="hover:bg-gray-50">
                         <td class="p-3 border border-gray-300 font-bold">Hidrogênio Verde (H2V)</td>
                         <td class="p-3 border border-gray-300">Vetor Energético de Longo Prazo</td>
-                        <td class="p-3 border border-gray-300">40% a 50% (Ciclo Completo)</td>
-                        <td class="p-3 border border-gray-300">Variável</td>
-                        <td class="p-3 border border-gray-300">Densidade absurda, armazenamento sazonal, zero emissão de CO<sub>2</sub>.</td>
-                        <td class="p-3 border border-gray-300">Armazenamento sazonal de grande escala.</td>
+                        <td class="p-3 border border-gray-300">40% a 50% (Ciclo Completo com Célula)</td>
+                        <td class="p-3 border border-gray-300">Variável (Depende do Eletrolisador)</td>
+                        <td class="p-3 border border-gray-300">Densidade de energia por massa absurda, armazenamento por meses sem perdas, emissão zero de CO<sub>2</sub>.</td>
+                        <td class="p-3 border border-gray-300">Custo tecnológico elevado, complexidade de compressão a alta pressão e armazenamento criogênico.</td>
+                        <td class="p-3 border border-gray-300">Armazenamento sazonal de grande escala, frotas pesadas de transporte e indústrias de base.</td>
+                    </tr>
+                    <tr class="bg-gray-50 hover:bg-gray-100">
+                        <td class="p-3 border border-gray-300 font-bold">Usinas Hidrelétricas</td>
+                        <td class="p-3 border border-gray-300">Renovável Despachável</td>
+                        <td class="p-3 border border-gray-300">85% a 95% (Alta Eficiência Hidráulica)</td>
+                        <td class="p-3 border border-gray-300">Acima de 50 anos</td>
+                        <td class="p-3 border border-gray-300">Fornecimento estável de base (SIN), custo de geração por MWh extremamente competitivo.</td>
+                        <td class="p-3 border border-gray-300">Sazonalidade hidrológica (secas) e grandes impactos ambientais/sociais no alagamento inicial.</td>
+                        <td class="p-3 border border-gray-300">Matriz centralizada nacional e suporte de carga pesada da rede.</td>
+                    </tr>
+                    <tr class="hover:bg-gray-50">
+                        <td class="p-3 border border-gray-300 font-bold">Energia Nuclear</td>
+                        <td class="p-3 border border-gray-300">Não Renovável Convencional</td>
+                        <td class="p-3 border border-gray-300">33% a 37% (Térmica para Elétrica)</td>
+                        <td class="p-3 border border-gray-300">40 a 60 anos</td>
+                        <td class="p-3 border border-gray-300">Emissão zero de GEE, altíssima confiabilidade e estabilidade de base independente do clima.</td>
+                        <td class="p-3 border border-gray-300">Custo de construção bilionário, gerenciamento complexo de rejeitos radioativos de longa atividade.</td>
+                        <td class="p-3 border border-gray-300">Geração de base ininterrupta para grandes centros urbanos e segurança do grid.</td>
                     </tr>
                 </tbody>
             </table>
