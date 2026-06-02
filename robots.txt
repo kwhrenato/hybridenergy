@@ -1,0 +1,10 @@
+# Regras gerais para todos os robôs
+User-agent: *
+Allow: /
+
+# Indicação obrigatória do seu mapa do site
+Sitemap: https://hybridenergy.com.br/sitemap.xml
+
+# Opcional: Se você tiver diretórios de imagens ou assets que prefere não indexar 
+# individualmente (apenas para evitar poluição no Google Imagens), você pode adicionar, 
+# mas no seu caso, recomendo deixar como está.
