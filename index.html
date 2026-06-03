@@ -537,5 +537,30 @@
 }
 </script>
 
+<a href="#" id="backToTop" class="fixed bottom-6 right-6 hidden bg-cyan-600/70 hover:bg-cyan-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 backdrop-blur-sm z-50" aria-label="Voltar ao topo">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 19V6M5 12l7-7 7 7"/>
+    </svg>
+</a>
+
+<script>
+    const backToTop = document.getElementById('backToTop');
+    
+    // Mostra o botão apenas após rolar 300px
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTop.classList.remove('hidden');
+        } else {
+            backToTop.classList.add('hidden');
+        }
+    });
+
+    // Scroll suave para o topo
+    backToTop.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+</script>
+
 </body>
 </html>
