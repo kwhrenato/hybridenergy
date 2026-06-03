@@ -79,12 +79,23 @@
 
 <main class="max-w-[1100px] mx-auto px-5 py-10 bg-white text-[#212529] shadow-sm rounded-b-lg">
     
-    <!-- H1 ÚNICO E CAPA -->
+   <!-- H1 ÚNICO E CAPA AJUSTADA PARA RESPONSIVIDADE -->
     <h1 class="text-3xl md:text-4xl font-extrabold text-[#005F73] mb-6 leading-tight">Guia Técnico Completo: Fontes de Energia Renovável para Sistemas Híbridos e Autonomia Residencial</h1>
     
     <figure class="mb-10 text-center">
-        <img src="imagens/capa.webp" fetchpriority="high" width="1200" height="2150" alt="Sistemas híbridos de energia residencial utilizando painéis solares e banco de baterias" class="w-full md:w-1/2 mx-auto rounded-xl shadow-lg object-cover">
+        <picture>
+            <!-- Versão para celular (até 768px) -->
+            <source media="(max-width: 768px)" srcset="imagens/capa_celular.webp">
+            <!-- Versão para desktop/telas maiores -->
+            <img src="imagens/capa_desktop.webp" 
+                 fetchpriority="high" 
+                 width="1000" 
+                 height="1792" 
+                 alt="Sistemas híbridos de energia residencial utilizando painéis solares e banco de baterias" 
+                 class="w-full md:w-1/2 mx-auto rounded-xl shadow-lg object-cover">
+        </picture>
     </figure>
+
 
     <!-- CONTEÚDO DO ARTIGO -->
     <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed">
