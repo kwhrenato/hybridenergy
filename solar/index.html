@@ -3,51 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistemas Fotovoltaicos para Residências e Empresas: Guia 2026 | Hybrid Energy</title>
-    <meta name="description" content="Guia definitivo sobre sistemas fotovoltaicos: dimensionamento, retorno do investimento, inversores híbridos e autonomia energética com baterias LiFePO4.">
+    <title>Sistemas Fotovoltaicos: Guia Definitivo de Energia Solar 2026</title>
+    <meta name="description" content="Guia completo sobre sistemas fotovoltaicos: dimensionamento, retorno (payback) e como garantir autonomia total com sistemas híbridos e baterias.">
     <link rel="canonical" href="https://hybridenergy.com.br/solar/">
-    <link rel="stylesheet" href="../css/estilos.css">
+    
+    <meta property="og:title" content="Sistemas Fotovoltaicos: Guia Definitivo de Energia Solar 2026">
+    <meta property="og:description" content="Guia completo sobre sistemas fotovoltaicos: dimensionamento, retorno (payback) e como garantir autonomia total com sistemas híbridos e baterias.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://hybridenergy.com.br/solar/">
+    <meta property="og:image" content="https://hybridenergy.com.br/solar/imagens/capa.webp">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { --primary-color: #00bcd4; --primary-dark: #005F73; --dark-bg: #12161a; }
+        header { background-color: var(--dark-bg); color: #ffffff; position: sticky; top: 0; z-index: 1000; }
+        .header-container { max-width: 1100px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; }
+        .header-logo { height: 90px; width: auto; }
+        footer { background-color: var(--dark-bg); color: #ffffff; padding-top: 60px; margin-top: 60px; }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body>
 
-    <main class="container mx-auto px-4 py-12 max-w-4xl">
-        <article class="bg-white p-8 rounded-lg shadow-sm border border-gray-200">
-            
-            <header class="mb-10">
-                <h1 class="text-4xl font-bold text-gray-900 mb-6">Sistemas Fotovoltaicos: O Guia Definitivo para Autonomia Energética em 2026</h1>
-                <p class="text-lg text-gray-600 leading-relaxed">
-                    Com a alta das bandeiras tarifárias e a inflação energética, a busca por formas de <strong>como diminuir o valor da conta de luz residencial</strong> tornou-se essencial. Este guia explora o que é a <strong>autonomia energética residencial</strong> e como transformar o seu imóvel em uma unidade de geração eficiente.
-                </p>
-            </header>
+<header>
+    <div class="header-container">
+        <a href="/" aria-label="Página Inicial HybridEnergy">
+            <img src="../imagens/logo-transparente-retangular.webp" alt="HybridEnergy" class="header-logo" width="405" height="90" fetchpriority="high">
+        </a>
+        <nav><ul class="flex gap-6 list-none font-semibold">
+            <li><a href="/" class="hover:text-cyan-400">Início</a></li>
+            <li><a href="/solar/" class="text-cyan-400">Energia Solar</a></li>
+            <li><a href="/eolica/" class="hover:text-cyan-400">Energia Eólica</a></li>
+            <li><a href="/armazenamento/" class="hover:text-cyan-400">Armazenamento</a></li>
+        </ul></nav>
+    </div>
+</header>
 
-            <section class="prose prose-lg max-w-none text-gray-700 space-y-8">
-                <h2 class="text-2xl font-semibold text-gray-900 border-l-4 border-cyan-600 pl-4">Por que investir em energia solar agora?</h2>
-                <p>O <strong>impacto da bandeira tarifária vermelha na conta de luz</strong> tem corroído o orçamento de famílias e empresas. Ao investir em um sistema fotovoltaico conectado ou híbrido, você não apenas economiza, mas blinda seu custo fixo contra novos reajustes da ANEEL.</p>
+<main class="max-w-[1100px] mx-auto px-5 py-10 bg-white text-[#212529]">
+    <h1 class="text-4xl font-bold mb-6">Sistemas Fotovoltaicos: O Guia Definitivo para Autonomia Energética em 2026</h1>
+    <img src="imagens/capa.webp" fetchpriority="high" width="1100" height="620" alt="Painéis solares instalados em residência moderna" class="mb-8 rounded-lg">
 
-                <h2 class="text-2xl font-semibold text-gray-900 border-l-4 border-cyan-600 pl-4">Anatomia do Sistema Híbrido</h2>
-                <p>Diferente do sistema on-grid tradicional, o sistema híbrido integra módulos monocristalinos de alta eficiência com inversores inteligentes, permitindo a gestão de energia mesmo durante falhas na rede.</p>
-                
-                <div class="grid md:grid-cols-2 gap-6 my-8">
-                    <div class="p-6 bg-gray-50 rounded-lg border border-gray-200">
-                        <h3 class="font-bold text-gray-900 mb-2">Energia Eólica</h3>
-                        <p class="text-sm">Complemento ideal para gerar energia 24h em regiões de vento constante. <a href="/eolica/" class="text-cyan-600 font-semibold underline">Saiba mais.</a></p>
-                    </div>
-                    <div class="p-6 bg-gray-50 rounded-lg border border-gray-200">
-                        <h3 class="font-bold text-gray-900 mb-2">Armazenamento (Baterias)</h3>
-                        <p class="text-sm">A chave para a arbitragem de carga e backup. <a href="/armazenamento/" class="text-cyan-600 font-semibold underline">Guia de Baterias LiFePO4.</a></p>
-                    </div>
-                </div>
+    <article class="prose prose-lg max-w-none">
+        <p>A alta das bandeiras tarifárias da ANEEL tornou a busca por <strong>como diminuir o valor da conta de luz residencial</strong> uma prioridade. Entender a <strong>autonomia energética residencial o que é</strong>, na prática, é o primeiro passo para blindar seu orçamento.</p>
 
-                <div class="bg-cyan-600 text-white p-8 rounded-lg mt-10 text-center">
-                    <h3 class="text-xl font-bold mb-4">Dimensionamento e ROI</h3>
-                    <p class="mb-6">O sucesso do projeto depende de um cálculo preciso de payback. Não dimensionamos apenas painéis, entregamos segurança técnica.</p>
-                    <a href="https://mercadolivre.com.br/seu-link-afiliado" class="inline-block bg-white text-cyan-700 font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition shadow-lg">
-                        Ver Melhores Kits Solares Recomendados
-                    </a>
-                </div>
-            </section>
-        </article>
-    </main>
+        <h2 class="text-2xl font-bold mt-8 mb-4">Impacto Tarifário e Segurança</h2>
+        <p>O <strong>impacto da bandeira tarifária vermelha na conta de luz</strong> é um dos principais gatilhos para a migração para a energia solar. Ao gerar sua própria energia, você elimina a dependência exclusiva da rede.</p>
 
+        <h2 class="text-2xl font-bold mt-8 mb-4">Anatomia do Sistema Híbrido</h2>
+        <p>Um sistema eficiente utiliza módulos monocristalinos e inversores inteligentes. Para maximizar o rendimento, a manutenção é vital, pois a sujeira pode reduzir a eficiência em até 20%. Conheça também nossas soluções complementares em <a href="/eolica/" class="text-cyan-600 font-bold">Energia Eólica</a> e nossos sistemas de <a href="/armazenamento/" class="text-cyan-600 font-bold">Armazenamento com Baterias LiFePO<sub>4</sub></a>.</p>
+
+        <div class="my-10 p-6 bg-gray-100 rounded-lg">
+            <h3 class="font-bold">Dica Técnica</h3>
+            <p>Sempre verifique a perda por efeito Joule (P = R·I<sup>2</sup>) ao dimensionar seus cabos CC.</p>
+        </div>
+
+        <a href="https://lista.mercadolivre.com.br/kit-solar" class="block w-full text-center bg-[#00bcd4] hover:bg-[#005F73] text-white font-bold py-4 rounded transition" aria-label="Ver kits solares no Mercado Livre">
+            Ver Melhores Kits Solares no Mercado Livre
+        </a>
+    </article>
+</main>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "Quanto tempo dura uma bateria de Lítio LiFePO4?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Modelos de alta qualidade que suportam até 6000 ciclos podem durar mais de 10 a 15 anos operando diariamente."
+    }
+  }, {
+    "@type": "Question",
+    "name": "Como a sujeira afeta os painéis?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "O acúmulo de poeira ou dejetos pode reduzir a eficiência em até 20%. Uma limpeza semestral é recomendada."
+    }
+  }]
+}
+</script>
 </body>
 </html>
